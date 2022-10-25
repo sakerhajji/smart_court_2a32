@@ -1,0 +1,38 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TableProxyOraclev10g" name="ORGANISER" directorySegmentName="seg_0" id="9DDEEF24-7D93-F796-4562-66F1310EED4E">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 15:02:25 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<schemaObject>822FC901-3977-CE7B-80D3-B89E30AA2903</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>310E1FB9-28B6-4348-9930-F70CAF6B0FF1</segment>
+<tableSpace>DA997ED1-13F2-4263-CA49-4BA03FF329FB</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ID_SALLE" id="6254EF01-F6F5-6469-8020-0C9EAE7968A5">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 15:02:25 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CIN" id="9F76FF00-E1AC-BCBE-23F5-9ADD903466A4">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 15:02:25 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_PER" id="3BF8CE92-67A2-C507-E987-39BDF1783511">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 15:02:25 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_SAUD" id="ACB72CE0-9E9A-32D6-7BAB-7040FC72AD8A">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 15:02:25 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+</TableProxyOraclev10g>

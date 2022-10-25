@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="bbb" id="874C8A06-A758-BAB9-0132-CA21C3C3743B" version="3.5">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 13:12:35 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>874C8A06-A758-BAB9-0132-CA21C3C3743B</designId>
+</OSDM_Design>

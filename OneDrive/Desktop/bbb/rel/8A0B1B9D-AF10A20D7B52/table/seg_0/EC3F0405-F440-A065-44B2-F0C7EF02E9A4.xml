@@ -1,0 +1,97 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EC3F0405-F440-A065-44B2-F0C7EF02E9A4" schemaObject="822FC901-3977-CE7B-80D3-B89E30AA2903" name="SALLE_AUDIENCE">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>EYA</sourceObjSchema>
+<sourceObjName>SALLE_AUDIENCE</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 15:02:40 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_SALLE" id="C1FBF984-AD38-FE9D-F1BE-A94D8A03D5A8">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>SALLE_AUDIENCE</sourceObjSchema>
+<sourceObjName>ID_SALLE</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 15:02:40 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOMBRES_CAMER_ACTIVEES" id="56DD4ED1-42FE-5145-61B9-A80D88C531AB">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>SALLE_AUDIENCE</sourceObjSchema>
+<sourceObjName>NOMBRES_CAMER_ACTIVEES</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 15:02:40 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOMBRE_PLACES_TOTAL" id="FE20FA45-3B30-DDCD-D337-D85C5003628E">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>SALLE_AUDIENCE</sourceObjSchema>
+<sourceObjName>NOMBRE_PLACES_TOTAL</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 15:02:40 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DISPONIBILTE" id="B1B92985-3A3A-2B92-DEB0-483E76F67792">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>SALLE_AUDIENCE</sourceObjSchema>
+<sourceObjName>DISPONIBILTE</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 15:02:40 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="60CCA5CE-41DD-3CE7-265A-AE11247F21BA" name="PK_SALLE">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>EYA</sourceObjSchema>
+<sourceObjName>PK_SALLE</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 15:02:40 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C1FBF984-AD38-FE9D-F1BE-A94D8A03D5A8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F1B9EE99-063A-853B-7288-269FF7EDB8D8" schemaObject="822FC901-3977-CE7B-80D3-B89E30AA2903" name="PK_SALLE">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>EYA</sourceObjSchema>
+<sourceObjName>PK_SALLE</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 15:02:40 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C1FBF984-AD38-FE9D-F1BE-A94D8A03D5A8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

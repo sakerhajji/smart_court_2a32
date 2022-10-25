@@ -1,0 +1,68 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="123C88ED-F02C-43E7-C54D-6A64EA1FCE1A" schemaObject="822FC901-3977-CE7B-80D3-B89E30AA2903" name="PLAIDER">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>EYA</sourceObjSchema>
+<sourceObjName>PLAIDER</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:41 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_AVOCAT" id="CD96042B-DDB2-4173-B33C-E206BB792EC9">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>PLAIDER</sourceObjSchema>
+<sourceObjName>ID_AVOCAT</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:41 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CF319E39-36D6-0B06-9F1F-9DFE48E554E7" referredColumn="02A141CC-C977-3522-6821-8F5DAF638438"/>
+</associations>
+</Column>
+<Column name="NUMCAS" id="8F98B7D3-10A2-C003-3D24-100DC99F9E6B">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>PLAIDER</sourceObjSchema>
+<sourceObjName>NUMCAS</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:41 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="82708A5D-CB27-DE2F-9441-49B7E3B8E019" referredColumn="9E1AFA54-0577-A0DC-790A-D9568CB7FDA5"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="EEB8C490-E89C-5269-7DFA-372D11EC2FC8" name="PG">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:41 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8F98B7D3-10A2-C003-3D24-100DC99F9E6B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4A338FEE-9722-B685-D902-9337A0C14714" name="PGAV">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:41 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CD96042B-DDB2-4173-B33C-E206BB792EC9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,106 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TableProxyOraclev10g" name="AFFAIREJURIDIQUE" directorySegmentName="seg_0" id="A0B55700-F2C9-E590-A179-850207E61F49">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:12 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<schemaObject>822FC901-3977-CE7B-80D3-B89E30AA2903</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>310E1FB9-28B6-4348-9930-F70CAF6B0FF1</segment>
+<tableSpace>DA997ED1-13F2-4263-CA49-4BA03FF329FB</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="PRENOM" id="3BB108B9-B396-FDA3-679E-0E343E2CCB2A">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:12 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="METIER" id="564A5ED4-15DD-A863-68A2-1B5FBD486DED">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:12 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CIN" id="79CF1735-67EB-484D-42F1-F7EB86D41E41">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:12 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ETAT" id="7AE9164F-56CC-C6B8-61ED-DF559549F630">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:12 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NB_ENFANTS" id="82A02F4C-69B4-A133-74FD-8AD728E6B26C">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:12 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NUMCAS" id="9E1AFA54-0577-A0DC-790A-D9568CB7FDA5">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:12 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="SEXE" id="AB7E1F82-6078-F4B4-374A-CAE0DCF1BC4B">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:12 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TYPESCAS" id="ACFE2E21-01FC-8307-E29A-D31D50CDECAD">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:12 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DATEDENAISSANCE" id="C7CCFE3B-6EB8-7D2F-15DD-403BCC8FE096">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:12 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NOM" id="CE4CF7AB-8C6D-A939-8AA9-92BAEA84C808">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:12 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DATECAS" id="D1E66F36-BA4C-9876-280E-380AD0113A9F">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:12 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID_SALLE" id="F3607999-C51D-B923-F954-EF8474769512">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:12 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="PK_AFFAIRE" id="DFDA7D89-9944-EAAC-9748-237A85AA1B23">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:12 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<schemaObject>822FC901-3977-CE7B-80D3-B89E30AA2903</schemaObject>
+<segment>3DCDA527-D5C8-FDB3-06DF-CA2956572287</segment>
+<tableSpace>DA997ED1-13F2-4263-CA49-4BA03FF329FB</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_SAAFFJ" id="02D87202-AC01-F3B9-AF17-942106FB37DB">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:12 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PK_AFFAIRE" id="8751AC4F-FA77-D0B7-FF2E-9EB2CDFECB04">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:12 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<segment>3DCDA527-D5C8-FDB3-06DF-CA2956572287</segment>
+<tableSpace>DA997ED1-13F2-4263-CA49-4BA03FF329FB</tableSpace>
+<existingIndex>DFDA7D89-9944-EAAC-9748-237A85AA1B23</existingIndex>
+<indexSegment>3DCDA527-D5C8-FDB3-06DF-CA2956572287</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev10g>

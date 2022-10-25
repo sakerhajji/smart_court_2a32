@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="4794EA0A-6CE6-3037-7572-F3F7249D8DCE" containerWithKeyObject="B035D11A-0248-C333-064F-32B6BBF765C5" localFKIndex="824622B3-58CE-2B8F-19A4-72A0AFF6E743" name="FK_AJ">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>EYA</sourceObjSchema>
+<sourceObjName>FK_AJ</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:21 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<referredTableLongName>EYA.AFFAIREJURIDIQUE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>A0B55700-F2C9-E590-A179-850207E61F49</referredTableID>
+<keyObject>DFDA7D89-9944-EAAC-9748-237A85AA1B23</keyObject>
+<referredKeyID>DFDA7D89-9944-EAAC-9748-237A85AA1B23</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>NUMCAS</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

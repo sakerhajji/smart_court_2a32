@@ -1,0 +1,130 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E39CB985-AC06-39B3-468A-05525AEDD623" schemaObject="822FC901-3977-CE7B-80D3-B89E30AA2903" name="AVOCAT">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>EYA</sourceObjSchema>
+<sourceObjName>AVOCAT</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:14 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_AVOCAT" id="02A141CC-C977-3522-6821-8F5DAF638438">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>AVOCAT</sourceObjSchema>
+<sourceObjName>ID_AVOCAT</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:14 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOM" id="DB6598AC-6B19-C9B0-A130-72C50885A211">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>AVOCAT</sourceObjSchema>
+<sourceObjName>NOM</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:14 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRENOM" id="11F984E6-2063-B6A1-CC21-1E3877CBBB1E">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>AVOCAT</sourceObjSchema>
+<sourceObjName>PRENOM</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:14 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DATE_NAISSANCE" id="9E0C75F4-2FFE-8153-6095-9E05801D9319">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>AVOCAT</sourceObjSchema>
+<sourceObjName>DATE_NAISSANCE</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:14 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOMBRE_PROCES_GAGNES" id="520F0F33-0B8B-45EB-60A6-45AF48EBF367">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>AVOCAT</sourceObjSchema>
+<sourceObjName>NOMBRE_PROCES_GAGNES</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:14 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NUMERO_TELEPHONE" id="07F63B35-4723-70A2-EA83-B829BF5989F0">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>AVOCAT</sourceObjSchema>
+<sourceObjName>NUMERO_TELEPHONE</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:14 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<constraintName>CK_AVOCAT</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="LENGTH(NUMERO_TELEPHONE)=8"/>
+<implementationDef dbType="Oracle Database 10g" definition="LENGTH(NUMERO_TELEPHONE)=8"/>
+</checkConstraint>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9422DE85-DB14-3A89-AC10-85ADB168CC54" name="PK_AVOCAT">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>EYA</sourceObjSchema>
+<sourceObjName>PK_AVOCAT</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:14 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="02A141CC-C977-3522-6821-8F5DAF638438"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B36BBD17-4929-4D0C-AC7C-09E7D4060801" schemaObject="822FC901-3977-CE7B-80D3-B89E30AA2903" name="PK_AVOCAT">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>EYA</sourceObjSchema>
+<sourceObjName>PK_AVOCAT</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:14 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="02A141CC-C977-3522-6821-8F5DAF638438"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

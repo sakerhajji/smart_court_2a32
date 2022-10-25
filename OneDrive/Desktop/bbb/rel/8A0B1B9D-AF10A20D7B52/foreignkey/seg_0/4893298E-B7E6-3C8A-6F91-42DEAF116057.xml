@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="4893298E-B7E6-3C8A-6F91-42DEAF116057" containerWithKeyObject="9DDEEF24-7D93-F796-4562-66F1310EED4E" localFKIndex="3BF8CE92-67A2-C507-E987-39BDF1783511" name="FK_PER">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>EYA</sourceObjSchema>
+<sourceObjName>FK_PER</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 15:02:25 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<referredTableLongName>EYA.PERSONNEL</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>86F745E3-3228-66D0-79F6-94FFCB042DF2</referredTableID>
+<keyObject>58C700F5-7E4F-19D6-123D-2C7D7441E04B</keyObject>
+<referredKeyID>58C700F5-7E4F-19D6-123D-2C7D7441E04B</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CIN</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

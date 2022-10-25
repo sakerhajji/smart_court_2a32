@@ -1,0 +1,38 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TableProxyOraclev10g" name="JUGER" directorySegmentName="seg_0" id="B035D11A-0248-C333-064F-32B6BBF765C5">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:21 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<schemaObject>822FC901-3977-CE7B-80D3-B89E30AA2903</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>310E1FB9-28B6-4348-9930-F70CAF6B0FF1</segment>
+<tableSpace>DA997ED1-13F2-4263-CA49-4BA03FF329FB</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="CIN_J" id="8A4A1BB6-00BF-FD38-7EC1-4D79082B04E3">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:21 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NUM_CAS" id="B1FFB62F-CA46-9D37-3C0D-AA8A6BEE252D">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:21 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_AJ" id="824622B3-58CE-2B8F-19A4-72A0AFF6E743">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:21 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_J" id="F5BBA88C-182A-2231-685E-CD247203158E">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:21 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+</TableProxyOraclev10g>

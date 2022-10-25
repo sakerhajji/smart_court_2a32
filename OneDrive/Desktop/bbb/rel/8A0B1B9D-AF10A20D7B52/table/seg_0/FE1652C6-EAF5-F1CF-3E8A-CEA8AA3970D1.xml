@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FE1652C6-EAF5-F1CF-3E8A-CEA8AA3970D1" schemaObject="822FC901-3977-CE7B-80D3-B89E30AA2903" name="JUGE">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>EYA</sourceObjSchema>
+<sourceObjName>JUGE</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:17 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CIN_J" id="E00C5D87-B63C-F2C4-FE19-D607988ECFCB">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>JUGE</sourceObjSchema>
+<sourceObjName>CIN_J</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:17 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOM" id="12A00263-5142-B9F5-0F3E-6E7F1A73397A">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>JUGE</sourceObjSchema>
+<sourceObjName>NOM</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:17 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRENOM" id="47E66D09-3D08-8B5C-5EB4-98CC8F4C341A">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>JUGE</sourceObjSchema>
+<sourceObjName>PRENOM</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:17 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NUM_BUREAU" id="95FFD9C0-B5C2-833D-9937-142DFFFAF3C3">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>JUGE</sourceObjSchema>
+<sourceObjName>NUM_BUREAU</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:17 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9F0CE928-FC47-0788-80D6-3CFAFFF42686" name="PK_JUGE">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>EYA</sourceObjSchema>
+<sourceObjName>PK_JUGE</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:17 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E00C5D87-B63C-F2C4-FE19-D607988ECFCB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1CD33AA7-037D-E8A5-11E4-E9FA63427301" schemaObject="822FC901-3977-CE7B-80D3-B89E30AA2903" name="PK_JUGE">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>EYA</sourceObjSchema>
+<sourceObjName>PK_JUGE</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:17 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E00C5D87-B63C-F2C4-FE19-D607988ECFCB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,98 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="86F745E3-3228-66D0-79F6-94FFCB042DF2" schemaObject="822FC901-3977-CE7B-80D3-B89E30AA2903" name="PERSONNEL">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>EYA</sourceObjSchema>
+<sourceObjName>PERSONNEL</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 15:03:15 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CIN" id="2E5D3DD1-916B-76B7-6A7F-92EB08BF5184">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>PERSONNEL</sourceObjSchema>
+<sourceObjName>CIN</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 15:03:15 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRENOM" id="B1CA997B-3714-6EEC-81A8-E24F44B393DD">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>PERSONNEL</sourceObjSchema>
+<sourceObjName>PRENOM</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 15:03:15 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOM" id="C6E51654-A81D-96B2-F986-586039DC56FF">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>PERSONNEL</sourceObjSchema>
+<sourceObjName>NOM</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 15:03:15 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="COLUMN1" id="FBC589E6-EF2C-4FB0-7CE2-94CF0CC46A56">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>PERSONNEL</sourceObjSchema>
+<sourceObjName>COLUMN1</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 15:03:15 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="58C700F5-7E4F-19D6-123D-2C7D7441E04B" name="PK_PER">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>EYA</sourceObjSchema>
+<sourceObjName>PK_PER</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 15:03:15 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2E5D3DD1-916B-76B7-6A7F-92EB08BF5184"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1B571664-FF3B-0F70-1EFF-E50E124AC3C7" schemaObject="822FC901-3977-CE7B-80D3-B89E30AA2903" name="PK_PER">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>EYA</sourceObjSchema>
+<sourceObjName>PK_PER</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 15:03:15 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2E5D3DD1-916B-76B7-6A7F-92EB08BF5184"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

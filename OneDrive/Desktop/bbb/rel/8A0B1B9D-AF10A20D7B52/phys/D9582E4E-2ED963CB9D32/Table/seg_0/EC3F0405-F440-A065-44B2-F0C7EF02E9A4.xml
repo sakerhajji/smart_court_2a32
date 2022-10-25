@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TableProxyOraclev10g" name="SALLE_AUDIENCE" directorySegmentName="seg_0" id="EC3F0405-F440-A065-44B2-F0C7EF02E9A4">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 15:02:40 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<schemaObject>822FC901-3977-CE7B-80D3-B89E30AA2903</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>310E1FB9-28B6-4348-9930-F70CAF6B0FF1</segment>
+<tableSpace>DA997ED1-13F2-4263-CA49-4BA03FF329FB</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="NOMBRES_CAMER_ACTIVEES" id="56DD4ED1-42FE-5145-61B9-A80D88C531AB">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 15:02:40 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DISPONIBILTE" id="B1B92985-3A3A-2B92-DEB0-483E76F67792">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 15:02:40 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID_SALLE" id="C1FBF984-AD38-FE9D-F1BE-A94D8A03D5A8">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 15:02:40 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NOMBRE_PLACES_TOTAL" id="FE20FA45-3B30-DDCD-D337-D85C5003628E">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 15:02:40 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="PK_SALLE" id="F1B9EE99-063A-853B-7288-269FF7EDB8D8">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 15:02:40 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<schemaObject>822FC901-3977-CE7B-80D3-B89E30AA2903</schemaObject>
+<segment>3DCDA527-D5C8-FDB3-06DF-CA2956572287</segment>
+<tableSpace>DA997ED1-13F2-4263-CA49-4BA03FF329FB</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PK_SALLE" id="60CCA5CE-41DD-3CE7-265A-AE11247F21BA">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 15:02:40 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<segment>3DCDA527-D5C8-FDB3-06DF-CA2956572287</segment>
+<tableSpace>DA997ED1-13F2-4263-CA49-4BA03FF329FB</tableSpace>
+<existingIndex>F1B9EE99-063A-853B-7288-269FF7EDB8D8</existingIndex>
+<indexSegment>3DCDA527-D5C8-FDB3-06DF-CA2956572287</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev10g>

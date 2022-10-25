@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="B01F4262-01FC-FD71-4CA8-64BCD6D901D2" containerWithKeyObject="9DDEEF24-7D93-F796-4562-66F1310EED4E" localFKIndex="ACB72CE0-9E9A-32D6-7BAB-7040FC72AD8A" name="FK_SAUD">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>EYA</sourceObjSchema>
+<sourceObjName>FK_SAUD</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 15:02:25 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<referredTableLongName>EYA.SALLE_AUDIENCE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>EC3F0405-F440-A065-44B2-F0C7EF02E9A4</referredTableID>
+<keyObject>60CCA5CE-41DD-3CE7-265A-AE11247F21BA</keyObject>
+<referredKeyID>60CCA5CE-41DD-3CE7-265A-AE11247F21BA</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID_SALLE</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

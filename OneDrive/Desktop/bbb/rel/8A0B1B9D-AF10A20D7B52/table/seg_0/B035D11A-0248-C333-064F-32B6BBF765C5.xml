@@ -1,0 +1,69 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B035D11A-0248-C333-064F-32B6BBF765C5" schemaObject="822FC901-3977-CE7B-80D3-B89E30AA2903" name="JUGER">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>EYA</sourceObjSchema>
+<sourceObjName>JUGER</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:21 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CIN_J" id="8A4A1BB6-00BF-FD38-7EC1-4D79082B04E3">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>JUGER</sourceObjSchema>
+<sourceObjName>CIN_J</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:21 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6676862F-009F-72C3-0060-496E113B5AF9" referredColumn="E00C5D87-B63C-F2C4-FE19-D607988ECFCB"/>
+</associations>
+</Column>
+<Column name="NUM_CAS" id="B1FFB62F-CA46-9D37-3C0D-AA8A6BEE252D">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>JUGER</sourceObjSchema>
+<sourceObjName>NUM_CAS</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:21 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4794EA0A-6CE6-3037-7572-F3F7249D8DCE" referredColumn="9E1AFA54-0577-A0DC-790A-D9568CB7FDA5"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="824622B3-58CE-2B8F-19A4-72A0AFF6E743" name="FK_AJ">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:21 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B1FFB62F-CA46-9D37-3C0D-AA8A6BEE252D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F5BBA88C-182A-2231-685E-CD247203158E" name="FK_J">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:21 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8A4A1BB6-00BF-FD38-7EC1-4D79082B04E3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

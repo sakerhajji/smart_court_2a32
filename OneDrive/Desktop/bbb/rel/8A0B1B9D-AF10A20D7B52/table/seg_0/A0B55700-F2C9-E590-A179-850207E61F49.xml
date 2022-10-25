@@ -1,0 +1,221 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A0B55700-F2C9-E590-A179-850207E61F49" schemaObject="822FC901-3977-CE7B-80D3-B89E30AA2903" name="AFFAIREJURIDIQUE">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>EYA</sourceObjSchema>
+<sourceObjName>AFFAIREJURIDIQUE</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:12 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NUMCAS" id="9E1AFA54-0577-A0DC-790A-D9568CB7FDA5">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>AFFAIREJURIDIQUE</sourceObjSchema>
+<sourceObjName>NUMCAS</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:12 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CIN" id="79CF1735-67EB-484D-42F1-F7EB86D41E41">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>AFFAIREJURIDIQUE</sourceObjSchema>
+<sourceObjName>CIN</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:12 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOM" id="CE4CF7AB-8C6D-A939-8AA9-92BAEA84C808">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>AFFAIREJURIDIQUE</sourceObjSchema>
+<sourceObjName>NOM</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:12 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRENOM" id="3BB108B9-B396-FDA3-679E-0E343E2CCB2A">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>AFFAIREJURIDIQUE</sourceObjSchema>
+<sourceObjName>PRENOM</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:12 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DATECAS" id="D1E66F36-BA4C-9876-280E-380AD0113A9F">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>AFFAIREJURIDIQUE</sourceObjSchema>
+<sourceObjName>DATECAS</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:12 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DATEDENAISSANCE" id="C7CCFE3B-6EB8-7D2F-15DD-403BCC8FE096">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>AFFAIREJURIDIQUE</sourceObjSchema>
+<sourceObjName>DATEDENAISSANCE</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:12 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ETAT" id="7AE9164F-56CC-C6B8-61ED-DF559549F630">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>AFFAIREJURIDIQUE</sourceObjSchema>
+<sourceObjName>ETAT</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:12 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="METIER" id="564A5ED4-15DD-A863-68A2-1B5FBD486DED">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>AFFAIREJURIDIQUE</sourceObjSchema>
+<sourceObjName>METIER</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:12 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SEXE" id="AB7E1F82-6078-F4B4-374A-CAE0DCF1BC4B">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>AFFAIREJURIDIQUE</sourceObjSchema>
+<sourceObjName>SEXE</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:12 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NB_ENFANTS" id="82A02F4C-69B4-A133-74FD-8AD728E6B26C">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>AFFAIREJURIDIQUE</sourceObjSchema>
+<sourceObjName>NB_ENFANTS</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:12 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TYPESCAS" id="ACFE2E21-01FC-8307-E29A-D31D50CDECAD">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>AFFAIREJURIDIQUE</sourceObjSchema>
+<sourceObjName>TYPESCAS</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:12 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_SALLE" id="F3607999-C51D-B923-F954-EF8474769512">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>AFFAIREJURIDIQUE</sourceObjSchema>
+<sourceObjName>ID_SALLE</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:12 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B41249BB-F6F5-8944-0561-AA3DB57DAD6B" referredColumn="C1FBF984-AD38-FE9D-F1BE-A94D8A03D5A8"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8751AC4F-FA77-D0B7-FF2E-9EB2CDFECB04" name="PK_AFFAIRE">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>EYA</sourceObjSchema>
+<sourceObjName>PK_AFFAIRE</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:12 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9E1AFA54-0577-A0DC-790A-D9568CB7FDA5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DFDA7D89-9944-EAAC-9748-237A85AA1B23" schemaObject="822FC901-3977-CE7B-80D3-B89E30AA2903" name="PK_AFFAIRE">
+<sourceConnName>test.bd</sourceConnName>
+<sourceObjSchema>EYA</sourceObjSchema>
+<sourceObjName>PK_AFFAIRE</sourceObjName>
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:12 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9E1AFA54-0577-A0DC-790A-D9568CB7FDA5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="02D87202-AC01-F3B9-AF17-942106FB37DB" name="FK_SAAFFJ">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:12 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F3607999-C51D-B923-F954-EF8474769512"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

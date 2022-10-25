@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TableProxyOraclev10g" name="JUGE" directorySegmentName="seg_0" id="FE1652C6-EAF5-F1CF-3E8A-CEA8AA3970D1">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:17 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<schemaObject>822FC901-3977-CE7B-80D3-B89E30AA2903</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>310E1FB9-28B6-4348-9930-F70CAF6B0FF1</segment>
+<tableSpace>DA997ED1-13F2-4263-CA49-4BA03FF329FB</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="NOM" id="12A00263-5142-B9F5-0F3E-6E7F1A73397A">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:17 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PRENOM" id="47E66D09-3D08-8B5C-5EB4-98CC8F4C341A">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:17 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NUM_BUREAU" id="95FFD9C0-B5C2-833D-9937-142DFFFAF3C3">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:17 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CIN_J" id="E00C5D87-B63C-F2C4-FE19-D607988ECFCB">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:17 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="PK_JUGE" id="1CD33AA7-037D-E8A5-11E4-E9FA63427301">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:17 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<schemaObject>822FC901-3977-CE7B-80D3-B89E30AA2903</schemaObject>
+<segment>3DCDA527-D5C8-FDB3-06DF-CA2956572287</segment>
+<tableSpace>DA997ED1-13F2-4263-CA49-4BA03FF329FB</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PK_JUGE" id="9F0CE928-FC47-0788-80D6-3CFAFFF42686">
+<createdBy>eya gadhoumi</createdBy>
+<createdTime>2022-10-25 14:35:17 UTC</createdTime>
+<ownerDesignName>bbb</ownerDesignName>
+<segment>3DCDA527-D5C8-FDB3-06DF-CA2956572287</segment>
+<tableSpace>DA997ED1-13F2-4263-CA49-4BA03FF329FB</tableSpace>
+<existingIndex>1CD33AA7-037D-E8A5-11E4-E9FA63427301</existingIndex>
+<indexSegment>3DCDA527-D5C8-FDB3-06DF-CA2956572287</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev10g>
