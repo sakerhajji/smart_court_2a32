@@ -17,10 +17,10 @@
    <widget class="QTabWidget" name="update">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>30</y>
-      <width>1041</width>
-      <height>571</height>
+      <x>20</x>
+      <y>10</y>
+      <width>1191</width>
+      <height>651</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -35,6 +35,119 @@ border-bottom-right-radius : 20px ; </string>
     <property name="currentIndex">
      <number>0</number>
     </property>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Log in</string>
+     </attribute>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>-104</x>
+        <y>-50</y>
+        <width>1231</width>
+        <height>711</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/new/prefix1/img/log-in.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="id">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>200</y>
+        <width>281</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins Medium</family>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(130, 190, 244);
+color: rgb(255, 255, 255);
+border : none ;</string>
+      </property>
+      <property name="placeholderText">
+       <string>Nom d'utilisateur</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="password">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>310</y>
+        <width>271</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins Medium</family>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(130, 190, 244);
+color: rgb(255, 255, 255);
+border : none ;</string>
+      </property>
+      <property name="echoMode">
+       <enum>QLineEdit::Password</enum>
+      </property>
+      <property name="placeholderText">
+       <string>Mot de passe</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="login">
+      <property name="geometry">
+       <rect>
+        <x>630</x>
+        <y>380</y>
+        <width>231</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins Medium</family>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 85, 255);
+color: rgb(255, 255, 255);
+QPushButton#pushButton{
+background-color: rgb(255, 255, 255);
+	color: rgb(130, 190, 244);
+border-top-left-radius : 20px ; 
+border-bottom-left-radius : 20px ; 
+border-top-right-radius : 20px ; 
+border-bottom-right-radius : 20px ; 
+}
+QPushButton#pushButton:hover{
+background-color: rgb(58, 120, 242);
+color: rgb(255,255, 255);
+}
+QPushButton#pushButton:pressed
+{
+padding-left:10px ;
+padding-top:10px ;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Login</string>
+      </property>
+     </widget>
+    </widget>
     <widget class="QWidget" name="tab">
      <attribute name="title">
       <string>ajouter</string>
@@ -452,10 +565,10 @@ padding-top:10px ;
      <widget class="QPushButton" name="afficher">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>500</y>
-        <width>111</width>
-        <height>41</height>
+        <x>90</x>
+        <y>550</y>
+        <width>131</width>
+        <height>61</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -486,8 +599,8 @@ padding-top:10px ;
      <widget class="QPushButton" name="pushButton_5">
       <property name="geometry">
        <rect>
-        <x>250</x>
-        <y>500</y>
+        <x>230</x>
+        <y>560</y>
         <width>121</width>
         <height>41</height>
        </rect>
@@ -520,7 +633,7 @@ padding-top:10px ;
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>50</y>
+        <y>110</y>
         <width>1001</width>
         <height>421</height>
        </rect>
@@ -532,13 +645,183 @@ padding-top:10px ;
        <property name="geometry">
         <rect>
          <x>40</x>
-         <y>31</y>
+         <y>30</y>
          <width>931</width>
          <height>361</height>
         </rect>
        </property>
       </widget>
      </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>560</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>sort</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>730</x>
+        <y>41</y>
+        <width>31</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/new/prefix1/img/search.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="chercher">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>40</y>
+        <width>541</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>   Recherche</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox">
+      <property name="geometry">
+       <rect>
+        <x>700</x>
+        <y>560</y>
+        <width>101</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="frame">
+       <bool>true</bool>
+      </property>
+      <item>
+       <property name="text">
+        <string>Numero de cas</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Cin</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Nom</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Prenom</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Type cas</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Date Cas</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Date de naissance</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Etat</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Metier</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>sexe</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Nobre d'enfants</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QRadioButton" name="decroissant">
+      <property name="geometry">
+       <rect>
+        <x>830</x>
+        <y>570</y>
+        <width>83</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>décroissant</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="croissant">
+      <property name="geometry">
+       <rect>
+        <x>830</x>
+        <y>550</y>
+        <width>83</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>croissant</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_4">
+      <property name="geometry">
+       <rect>
+        <x>870</x>
+        <y>40</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>pdf export</string>
+      </property>
+     </widget>
+     <zorder>afficher</zorder>
+     <zorder>pushButton_5</zorder>
+     <zorder>widget_2</zorder>
+     <zorder>pushButton</zorder>
+     <zorder>chercher</zorder>
+     <zorder>pushButton_3</zorder>
+     <zorder>comboBox</zorder>
+     <zorder>decroissant</zorder>
+     <zorder>croissant</zorder>
+     <zorder>pushButton_4</zorder>
     </widget>
     <widget class="QWidget" name="tab_4">
      <attribute name="title">
@@ -632,44 +915,63 @@ padding-top:10px ;
      <attribute name="title">
       <string>update</string>
      </attribute>
-     <widget class="QPushButton" name="pushButton_12">
+     <widget class="QWidget" name="widget_6" native="true">
       <property name="geometry">
        <rect>
-        <x>290</x>
-        <y>220</y>
-        <width>121</width>
-        <height>41</height>
+        <x>490</x>
+        <y>50</y>
+        <width>521</width>
+        <height>421</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#pushButton{
-background-color: rgb(255, 255, 255);
-	color: rgb(130, 190, 244);
-border-top-left-radius : 20px ; 
-border-bottom-left-radius : 20px ; 
-border-top-right-radius : 20px ; 
-border-bottom-right-radius : 20px ; 
-}
-QPushButton#pushButton:hover{
-background-color: rgb(58, 120, 242);
-color: rgb(255,255, 255);
-}
-QPushButton#pushButton:pressed
-{
-padding-left:10px ;
-padding-top:10px ;
-}
-</string>
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
       </property>
-      <property name="text">
-       <string>cancel</string>
-      </property>
+      <widget class="QTableView" name="print_tab_4">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>30</y>
+         <width>511</width>
+         <height>371</height>
+        </rect>
+       </property>
+      </widget>
      </widget>
-     <widget class="QLineEdit" name="datecas">
+     <widget class="QLineEdit" name="Cin_2">
       <property name="geometry">
        <rect>
-        <x>270</x>
-        <y>110</y>
+        <x>260</x>
+        <y>80</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="placeholderText">
+       <string>CIN</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="NbEnf_2">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>380</y>
         <width>201</width>
         <height>31</height>
        </rect>
@@ -688,14 +990,196 @@ padding-top:10px ;
        <set>Qt::AlignCenter</set>
       </property>
       <property name="placeholderText">
-       <string>Date de cas</string>
+       <string>Nombre d'enfants</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_13">
+     <widget class="QLineEdit" name="TypeCas_2">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>220</y>
+        <x>30</x>
+        <y>140</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="placeholderText">
+       <string>Type cas</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="Prenom_2">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>200</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="placeholderText">
+       <string>Prenom</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="Nom_2">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>140</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="placeholderText">
+       <string>NOM</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="Numsall_2">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>260</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="placeholderText">
+       <string>Numcas</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="DateNass_2">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>260</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="placeholderText">
+       <string>Date de naissance</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="NumCas_2">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>80</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="placeholderText">
+       <string>Numero de cas</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="Sexe_2">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>380</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="placeholderText">
+       <string>sexe</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Update">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>450</y>
         <width>111</width>
         <height>41</height>
        </rect>
@@ -725,34 +1209,11 @@ padding-top:10px ;
        <string>Update</string>
       </property>
      </widget>
-     <widget class="QWidget" name="widget_6" native="true">
+     <widget class="QLineEdit" name="DateCas_2">
       <property name="geometry">
        <rect>
-        <x>490</x>
-        <y>50</y>
-        <width>521</width>
-        <height>421</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);</string>
-      </property>
-      <widget class="QTableView" name="print_tab_4">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>30</y>
-         <width>511</width>
-         <height>371</height>
-        </rect>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QLineEdit" name="numCasup">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>110</y>
+        <x>30</x>
+        <y>200</y>
         <width>201</width>
         <height>31</height>
        </rect>
@@ -771,7 +1232,176 @@ padding-top:10px ;
        <set>Qt::AlignCenter</set>
       </property>
       <property name="placeholderText">
-       <string>Numero de cas</string>
+       <string>Date de cas</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="Etat_2">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>320</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="placeholderText">
+       <string>Etat</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="Metier_2">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>320</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="placeholderText">
+       <string>Metier</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox_2">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>30</y>
+        <width>201</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_6">
+     <attribute name="title">
+      <string>mailing</string>
+     </attribute>
+     <widget class="QLineEdit" name="mail_pass">
+      <property name="geometry">
+       <rect>
+        <x>722</x>
+        <y>76</y>
+        <width>141</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="echoMode">
+       <enum>QLineEdit::Password</enum>
+      </property>
+      <property name="placeholderText">
+       <string>your mail password</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="msg">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>182</y>
+        <width>651</width>
+        <height>291</height>
+       </rect>
+      </property>
+      <property name="placeholderText">
+       <string>type your message here ...</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="sendBtn">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>476</y>
+        <width>651</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Send</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="rcpt">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>76</y>
+        <width>491</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <stylestrategy>PreferDefault</stylestrategy>
+       </font>
+      </property>
+      <property name="inputMask">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>recipient</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="file">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>146</y>
+        <width>571</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="placeholderText">
+       <string>attachement here</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="browseBtn">
+      <property name="geometry">
+       <rect>
+        <x>787</x>
+        <y>145</y>
+        <width>75</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Browse ...</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="subject">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>110</y>
+        <width>651</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="placeholderText">
+       <string>subject</string>
       </property>
      </widget>
     </widget>
@@ -796,8 +1426,75 @@ padding-top:10px ;
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>id</tabstop>
+  <tabstop>password</tabstop>
+  <tabstop>login</tabstop>
+  <tabstop>NumCas</tabstop>
+  <tabstop>Cin</tabstop>
+  <tabstop>TypeCas</tabstop>
+  <tabstop>Nom</tabstop>
+  <tabstop>DateCas</tabstop>
+  <tabstop>Prenom</tabstop>
+  <tabstop>Numsall</tabstop>
+  <tabstop>DateNass</tabstop>
+  <tabstop>Etat</tabstop>
+  <tabstop>Metier</tabstop>
+  <tabstop>NbEnf</tabstop>
+  <tabstop>Sexe</tabstop>
+  <tabstop>Ajouter</tabstop>
+  <tabstop>pushButton_2</tabstop>
+  <tabstop>chercher</tabstop>
+  <tabstop>pushButton_3</tabstop>
+  <tabstop>afficher</tabstop>
+  <tabstop>pushButton_5</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>comboBox</tabstop>
+  <tabstop>croissant</tabstop>
+  <tabstop>decroissant</tabstop>
+  <tabstop>pushButton_4</tabstop>
+  <tabstop>print_tab</tabstop>
+  <tabstop>NUMcas</tabstop>
+  <tabstop>supprimer</tabstop>
+  <tabstop>comboBox_2</tabstop>
+  <tabstop>NumCas_2</tabstop>
+  <tabstop>Cin_2</tabstop>
+  <tabstop>TypeCas_2</tabstop>
+  <tabstop>Nom_2</tabstop>
+  <tabstop>DateCas_2</tabstop>
+  <tabstop>Prenom_2</tabstop>
+  <tabstop>Numsall_2</tabstop>
+  <tabstop>DateNass_2</tabstop>
+  <tabstop>Etat_2</tabstop>
+  <tabstop>Metier_2</tabstop>
+  <tabstop>NbEnf_2</tabstop>
+  <tabstop>Sexe_2</tabstop>
+  <tabstop>Update</tabstop>
+  <tabstop>print_tab_4</tabstop>
+  <tabstop>rcpt</tabstop>
+  <tabstop>mail_pass</tabstop>
+  <tabstop>subject</tabstop>
+  <tabstop>file</tabstop>
+  <tabstop>browseBtn</tabstop>
+  <tabstop>msg</tabstop>
+  <tabstop>sendBtn</tabstop>
+  <tabstop>print_tab_3</tabstop>
+  <tabstop>update</tabstop>
+  <tabstop>print_tab_2</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>
@@ -808,11 +1505,11 @@ padding-top:10px ;
    <hints>
     <hint type="sourcelabel">
      <x>429</x>
-     <y>561</y>
+     <y>559</y>
     </hint>
     <hint type="destinationlabel">
      <x>451</x>
-     <y>481</y>
+     <y>479</y>
     </hint>
    </hints>
   </connection>
@@ -824,11 +1521,11 @@ padding-top:10px ;
    <hints>
     <hint type="sourcelabel">
      <x>415</x>
-     <y>564</y>
+     <y>559</y>
     </hint>
     <hint type="destinationlabel">
-     <x>285</x>
-     <y>474</y>
+     <x>280</x>
+     <y>479</y>
     </hint>
    </hints>
   </connection>
@@ -839,12 +1536,12 @@ padding-top:10px ;
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>446</x>
-     <y>558</y>
+     <x>430</x>
+     <y>559</y>
     </hint>
     <hint type="destinationlabel">
      <x>467</x>
-     <y>424</y>
+     <y>419</y>
     </hint>
    </hints>
   </connection>
@@ -887,12 +1584,12 @@ padding-top:10px ;
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>432</x>
-     <y>544</y>
+     <x>430</x>
+     <y>559</y>
     </hint>
     <hint type="destinationlabel">
      <x>272</x>
-     <y>379</y>
+     <y>359</y>
     </hint>
    </hints>
   </connection>
@@ -908,7 +1605,7 @@ padding-top:10px ;
     </hint>
     <hint type="destinationlabel">
      <x>431</x>
-     <y>308</y>
+     <y>299</y>
     </hint>
    </hints>
   </connection>
@@ -924,7 +1621,7 @@ padding-top:10px ;
     </hint>
     <hint type="destinationlabel">
      <x>278</x>
-     <y>319</y>
+     <y>299</y>
     </hint>
    </hints>
   </connection>
@@ -955,8 +1652,8 @@ padding-top:10px ;
      <y>557</y>
     </hint>
     <hint type="destinationlabel">
-     <x>284</x>
-     <y>256</y>
+     <x>280</x>
+     <y>239</y>
     </hint>
    </hints>
   </connection>
@@ -968,11 +1665,11 @@ padding-top:10px ;
    <hints>
     <hint type="sourcelabel">
      <x>387</x>
-     <y>571</y>
+     <y>559</y>
     </hint>
     <hint type="destinationlabel">
      <x>478</x>
-     <y>191</y>
+     <y>179</y>
     </hint>
    </hints>
   </connection>
@@ -984,11 +1681,11 @@ padding-top:10px ;
    <hints>
     <hint type="sourcelabel">
      <x>364</x>
-     <y>567</y>
+     <y>559</y>
     </hint>
     <hint type="destinationlabel">
      <x>275</x>
-     <y>193</y>
+     <y>179</y>
     </hint>
    </hints>
   </connection>
@@ -999,8 +1696,8 @@ padding-top:10px ;
    <slot>hide()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>392</x>
-     <y>597</y>
+     <x>370</x>
+     <y>646</y>
     </hint>
     <hint type="destinationlabel">
      <x>439</x>
@@ -1016,75 +1713,11 @@ padding-top:10px ;
    <hints>
     <hint type="sourcelabel">
      <x>218</x>
-     <y>592</y>
+     <y>641</y>
     </hint>
     <hint type="destinationlabel">
      <x>292</x>
      <y>467</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_12</sender>
-   <signal>clicked()</signal>
-   <receiver>numCasup</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>379</x>
-     <y>306</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>237</x>
-     <y>208</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_12</sender>
-   <signal>clicked()</signal>
-   <receiver>datecas</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>429</x>
-     <y>312</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>438</x>
-     <y>206</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_12</sender>
-   <signal>clicked()</signal>
-   <receiver>print_tab_4</receiver>
-   <slot>hide()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>411</x>
-     <y>325</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>782</x>
-     <y>276</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_13</sender>
-   <signal>clicked()</signal>
-   <receiver>print_tab_4</receiver>
-   <slot>show()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>214</x>
-     <y>317</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>613</x>
-     <y>368</y>
     </hint>
    </hints>
   </connection>
@@ -1096,7 +1729,7 @@ padding-top:10px ;
    <hints>
     <hint type="sourcelabel">
      <x>352</x>
-     <y>571</y>
+     <y>559</y>
     </hint>
     <hint type="destinationlabel">
      <x>686</x>

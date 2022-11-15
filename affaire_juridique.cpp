@@ -58,7 +58,8 @@ bool affaire_juridique :: ajouteraffaire ()
 QSqlQueryModel*  affaire_juridique ::  afficher ()
 {
     QSqlQueryModel* model=new QSqlQueryModel() ;
-    model->setQuery("SELECT * FROM AFFAIRE_JURIDIQUE ");
+    model->setQuery("SELECT REVERSE (NUMCAS),REVERSE(CIN),REVERSE (NOM),REVERSE (PRENOM),REVERSE(TYPECAS),REVERSE(DATECAS),REVERSE(DATENESS)"
+                    ",REVERSE(ETAT),REVERSE(SEXE),REVERSE(METIER),REVERSE(NBENFANT)   FROM AFFAIRE_JURIDIQUE ");
           model->setHeaderData(0, Qt::Horizontal, QObject:: tr("Numero de cas"));
           model->setHeaderData(1, Qt::Horizontal, QObject:: tr ("Cin"));
           model->setHeaderData(2, Qt::Horizontal, QObject:: tr("Nom"));
@@ -89,12 +90,95 @@ QSqlQueryModel*  affaire_juridique ::  afficher ()
 
  }
 
-  bool affaire_juridique ::  Update_afffaire ( QString x , QString y)
+  bool affaire_juridique ::  Update_afffaire ()
   {
       QSqlQuery query;
-      query.prepare(" UPDATE AFFAIRE_JURIDIQUE SET DATECAS=:datecas  WHERE NUMCAS = :numcas" );
-      query.bindValue(":datecas",x );
-      query.bindValue(":numcas",y );
+      query.prepare(" UPDATE AFFAIRE_JURIDIQUE SET CIN = :CIN , NOM = :NOM , PRENOM = :PRENOM , TYPECAS = :TYPECAS , DATECAS = :DATECAS ,DATENESS = :DATENESS ,ETAT = :ETAT , SEXE = :SEXE , METIER = :METIER ,NBENFANT = :NBENFANT  WHERE NUMCAS = :NUMCAS" );
+
+      query.bindValue(":CIN",cin);
+      query.bindValue(":NOM", nom);
+      query.bindValue(":PRENOM", prenom);
+      query.bindValue(":TYPECAS", typecas);
+      query.bindValue(":DATECAS", datecas);
+      query.bindValue(":DATENESS",dateness);
+      query.bindValue(":ETAT", etat);
+      query.bindValue(":SEXE", sexe);
+      query.bindValue(":METIER", metier);
+      query.bindValue(":NBENFANT", nbenfant);
+      query.bindValue(":NUMCAS",numcas );
+
       return  query.exec();
   }
+  QSqlQueryModel*  affaire_juridique ::  chercher (QString a)
+  {
+
+      QSqlQueryModel *model=new QSqlQueryModel();
+
+          model->setQuery(" SELECT REVERSE (NUMCAS),REVERSE(CIN),REVERSE (NOM),REVERSE (PRENOM),REVERSE(TYPECAS),REVERSE(DATECAS),REVERSE(DATENESS)"
+                          ",REVERSE(ETAT),REVERSE(SEXE),REVERSE(METIER),REVERSE(NBENFANT) "
+                          " from AFFAIRE_JURIDIQUE WHERE (NUMCAS LIKE '%"+a+"%' OR CIN LIKE '%"+a+"%' OR PRENOM LIKE '%"+a+"%' OR NOM LIKE '%"+a+"%' "
+              "OR TYPECAS LIKE '%"+a+"%' OR DATECAS LIKE '%"+ a +"%' OR DATENESS LIKE '%"+a+"%' OR ETAT LIKE '%"+a+"%' "
+              "OR SEXE LIKE '%"+a+"%' OR METIER LIKE '%"+a+"%' OR NBENFANT LIKE '%"+a+"%'  ) ");
+
+            model->setHeaderData(0, Qt::Horizontal, QObject:: tr("Numero de cas"));
+            model->setHeaderData(1, Qt::Horizontal, QObject:: tr ("Cin"));
+            model->setHeaderData(2, Qt::Horizontal, QObject:: tr("Nom"));
+            model->setHeaderData(3, Qt::Horizontal, QObject:: tr ("Prenom"));
+            model->setHeaderData(4, Qt::Horizontal, QObject:: tr("Type cas"));
+            model->setHeaderData(5, Qt::Horizontal, QObject:: tr ("Date Cas"));
+            model->setHeaderData(6, Qt::Horizontal, QObject:: tr("Date de naissance"));
+            model->setHeaderData(7, Qt::Horizontal, QObject:: tr ("Etat"));
+            model->setHeaderData(8, Qt::Horizontal, QObject:: tr ("Metier"));
+            model->setHeaderData(9, Qt::Horizontal, QObject:: tr ("sexe"));
+            model->setHeaderData(10, Qt::Horizontal, QObject:: tr ("Nobre d'enfants"));
+
+
+
+      return model ;
+
+  }
+
+
+
+  QSqlQueryModel*  affaire_juridique ::  sortname(QString a , QString b)
+  {
+
+      QSqlQueryModel *model=new QSqlQueryModel();
+
+          model->setQuery("  SELECT REVERSE (NUMCAS),REVERSE(CIN),REVERSE (NOM),REVERSE (PRENOM),REVERSE(TYPECAS),REVERSE(DATECAS),REVERSE(DATENESS)"
+                          ",REVERSE(ETAT),REVERSE(SEXE),REVERSE(METIER),REVERSE(NBENFANT) FROM AFFAIRE_JURIDIQUE ORDER BY "+a+" "+b+"  ");
+
+            model->setHeaderData(0, Qt::Horizontal, QObject:: tr("Numero de cas"));
+            model->setHeaderData(1, Qt::Horizontal, QObject:: tr ("Cin"));
+            model->setHeaderData(2, Qt::Horizontal, QObject:: tr("Nom"));
+            model->setHeaderData(3, Qt::Horizontal, QObject:: tr ("Prenom"));
+            model->setHeaderData(4, Qt::Horizontal, QObject:: tr("Type cas"));
+            model->setHeaderData(5, Qt::Horizontal, QObject:: tr ("Date Cas"));
+            model->setHeaderData(6, Qt::Horizontal, QObject:: tr("Date de naissance"));
+            model->setHeaderData(7, Qt::Horizontal, QObject:: tr ("Etat"));
+            model->setHeaderData(8, Qt::Horizontal, QObject:: tr ("Metier"));
+            model->setHeaderData(9, Qt::Horizontal, QObject:: tr ("sexe"));
+            model->setHeaderData(10, Qt::Horizontal, QObject:: tr ("Nombre d'enfants"));
+
+
+
+      return model ;
+
+  }
+  void affaire_juridique:: cryptage ()
+  {
+      reverse(numcas.begin(), numcas.end());
+      reverse(cin.begin(), cin.end());
+      reverse(nom.begin(), nom.end());
+      reverse(prenom.begin(), prenom.end());
+      reverse(typecas.begin(), typecas.end());
+      reverse(datecas.begin(), datecas.end());
+      reverse(dateness.begin(), dateness.end());
+      reverse(etat.begin(), etat.end());
+      reverse(sexe.begin(), sexe.end());
+      reverse(metier.begin(), metier.end());
+      reverse(nbenfant.begin(), nbenfant.end());
+
+  }
+
 

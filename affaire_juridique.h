@@ -44,7 +44,11 @@ class affaire_juridique
         bool ajouteraffaire () ;
         QSqlQueryModel * afficher () ;
         bool supprimer_afffaire ( QString x) ;
-        bool Update_afffaire ( QString x , QString y) ;
+        bool Update_afffaire () ;
+        QSqlQueryModel * chercher (QString) ;
+        QSqlQueryModel * sortname (QString , QString) ;
+        void cryptage () ;
+
 
 
     protected:
