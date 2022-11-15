@@ -4,6 +4,8 @@
 #include "salleaudience.h"
 #include <QMainWindow>
 
+
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -25,6 +27,22 @@ private slots:
 
 
     void on_update_clicked();
+
+    void on_pdfbutton_clicked();
+
+    void on_tributton_clicked();
+
+    void on_trierbutton2_clicked();
+
+    void on_recherchebutton_textChanged(const QString &arg1);
+
+   void on_stat_clicked();
+
+
+
+   void on_bb_clicked();
+
+   void on_excel_clicked();
 
 private:
     Ui::MainWindow *ui;

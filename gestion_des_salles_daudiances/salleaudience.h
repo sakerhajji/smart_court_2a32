@@ -22,7 +22,8 @@ public:
     int getnbplace(){return  nbplace;}
     int getcamenmarche(){return  camenmarche;}
     QString getdispo(){return   dispo;}*/
-
+    QStringList listedispo(QString var) ;
+   int calcul_dispo(QString adresse,QString val);
     int getid();
     int getnbplace();
     int getcamenmarche();
@@ -36,7 +37,14 @@ public:
     bool ajout();
     bool suppression(int);
     QSqlQueryModel * affichage();
-    bool modification(int id,int nbplace,int camenmarche,QString dispo);
+    bool modification();
+    QSqlQueryModel* trie();
+    QSqlQueryModel* trie2();
+    QSqlQueryModel*recherche(QString id);
+
+
+
 };
+
 
 #endif // SALLEAUDIENCE_H

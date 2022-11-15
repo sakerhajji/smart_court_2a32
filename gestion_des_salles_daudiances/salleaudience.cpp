@@ -3,6 +3,7 @@
 #include <QSqlQuery>
 #include <QSqlQueryModel>
 #include <QtDebug>
+#include <QtWidgets>
 
 salleaudience::salleaudience()
 {
@@ -56,7 +57,7 @@ bool salleaudience::ajout()
 }
 
 bool salleaudience::suppression(int id)
-{   
+{
     QSqlQuery query;
     QString id_string=QString::number(id);
     query.prepare("Delete from SALLEAUDIENCE where ID= :id");
@@ -72,20 +73,87 @@ QSqlQueryModel * salleaudience::affichage()
     model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID"));
     model->setHeaderData(1,Qt::Horizontal,QObject::tr("nbplace"));
     model->setHeaderData(2,Qt::Horizontal,QObject::tr("camenmarche"));
-    model->setHeaderData(2,Qt::Horizontal,QObject::tr("dispo"));
+    model->setHeaderData(3,Qt::Horizontal,QObject::tr("dispo"));
 
 
     return model;
 }
-    bool salleaudience::modification(int id,int nbplace,int camenmarche,QString dispo)
+    bool salleaudience::modification()
     {
     QSqlQuery query;
 
-    query.prepare("update SALLEAUDIENCE set id= :id, nbplace=:nbplace,camenmarche=:camenmarche,dispo=:dispo where id = :id )");
+    query.prepare("update SALLEAUDIENCE set ID= :id , NBPLACE=:nbplace , CAMENMARCHE=:camenmarche , DISPO=:dispo where ID = :id )");
     query.bindValue(":id",id);
     query.bindValue(":nbplace",nbplace);
     query.bindValue(":camenmarche",camenmarche);
     query.bindValue(":dispo",dispo);
     return    query.exec();
     }
+
+QSqlQueryModel* salleaudience::trie()
+    {
+        QSqlQueryModel* model = new QSqlQueryModel();
+
+            model->setQuery("select ID,nbplace,camenmarche,dispo from SALLEAUDIENCE ORDER BY ID asc");
+
+            model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
+              model->setHeaderData(1, Qt::Horizontal, QObject::tr("nbplace"));
+                   model->setHeaderData(2, Qt::Horizontal, QObject::tr("camenmarche"));
+                        model->setHeaderData(3, Qt::Horizontal, QObject::tr("dispo"));
+
+
+        return model;
+    }
+
+QSqlQueryModel* salleaudience::trie2()
+    {
+        QSqlQueryModel* model = new QSqlQueryModel();
+
+            model->setQuery("select ID,nbplace,camenmarche,dispo from SALLEAUDIENCE ORDER BY ID desc");
+
+            model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
+              model->setHeaderData(1, Qt::Horizontal, QObject::tr("nbplace"));
+                   model->setHeaderData(2, Qt::Horizontal, QObject::tr("camenmarche"));
+                        model->setHeaderData(3, Qt::Horizontal, QObject::tr("dispo"));
+
+
+        return model;
+    }
+
+QSqlQueryModel *salleaudience::recherche(QString id)
+{
+
+    QSqlQueryModel *model= new QSqlQueryModel();
+        model->setQuery("SELECT * FROM salleaudience WHERE ID LIKE'%"+id+"%'");
+        return model;
+}
+
+
+QStringList salleaudience::listedispo(QString var){
+    QSqlQuery query;
+    query.prepare("select DISTINCT("+var+") from SALLEAUDIENCE");
+    query.exec();
+    QStringList list;
+    while(query.next())
+    {
+        list.append(query.value(0).toString());
+    }
+
+    return list;
+}
+int salleaudience::calcul_dispo(QString adresse,QString val)
+{
+    QSqlQuery query;
+     query.prepare("select  * from SALLEAUDIENCE  WHERE "+val+"=:adresse");
+     query.bindValue(":adresse", adresse );
+     query.exec();
+     int total=0;
+     while(query.next())
+     {
+       total++;
+     }
+     return total;
+}
+
+
 

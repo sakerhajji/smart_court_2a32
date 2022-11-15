@@ -3,7 +3,7 @@
 #include<QObject>
 #include <QApplication>
 #include "connection.h"
-
+#include "digitalclock.h"
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -22,5 +22,20 @@ int main(int argc, char *argv[])
         QMessageBox::critical(nullptr, QObject::tr("data base is not open"),
         QObject::tr("connexion failed.\n"
                                "Click Cancel to exit."), QMessageBox::Cancel);
+
+
+    DigitalClock clock;
+    clock.show();
+
     return a.exec();
 }
+
+
+
+
+
+
+
+
+
+

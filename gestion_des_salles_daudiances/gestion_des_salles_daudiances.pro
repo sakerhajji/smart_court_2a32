@@ -1,5 +1,8 @@
-QT+=core gui
+QT       += core gui sql network multimedia multimediawidgets charts printsupport widgets axcontainer
+
+QT+= core gui printsupport
 QT+=sql
+QT += charts
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
@@ -17,12 +20,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     connection.cpp \
+    digitalclock.cpp \
+    exportexcelobject.cpp \
     main.cpp \
     mainwindow.cpp \
     salleaudience.cpp
 
 HEADERS += \
     connection.h \
+    digitalclock.h \
+    exportexcelobject.h \
     mainwindow.h \
     salleaudience.h
 
