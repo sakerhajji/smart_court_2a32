@@ -11,8 +11,6 @@
 byte Count_acces=0; 
 byte CodeVerif=0; 
 byte Code_Acces[4]={0x20, 0x12, 0x23, 0x2B}; 
-char data ; 
-//String id ; 
 
 
 MFRC522 rfid(SS_PIN, RST_PIN); // Instance of the class
@@ -74,8 +72,8 @@ Serial.println(id);*/
      // Dépassement des tentatives (clignotement infinie) 
      while(1)
      { 
-      data="s";
-      
+      //data="s";
+       Serial.write('s'); //envoyer l'inofrmation à qt 
       digitalWrite(AccesFlag_PIN, HIGH);
       //delay(200); 
       digitalWrite(AccesFlag_PIN, LOW);
@@ -86,8 +84,8 @@ Serial.println(id);*/
     }
     else
     {   
-      data="n";
-     
+     // data="n";
+      Serial.write('n'); //envoyer l'inofrmation à qt 
       // Affichage 
       Serial.println("Code érroné");
     
@@ -100,7 +98,8 @@ Serial.println(id);*/
   else
   {
     // Affichage 
-    data = "v";
+    //data = "v";
+     Serial.write('v'); //envoyer l'inofrmation à qt 
     Serial.println("Ouverture de la porte");
     
     // Ouverture de la porte & Initialisation 
