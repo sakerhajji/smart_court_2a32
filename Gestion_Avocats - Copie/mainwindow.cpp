@@ -7,16 +7,28 @@
 #include<QtDebug>
 #include "smtp.h"
 #include <QSqlQuery>
+#include "arduino.h"
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
 
-    ui->le_id->setValidator(new QIntValidator(0, 99999999, this));
+    ui->le_id->setValidator(new QIntValidator(0, 999999999, this));
     ui->le_num_tel->setValidator(new QIntValidator(0, 999999999, this));
     ui->table_avocat_2->setModel(A.afficher());
     ui->table_avocat->setModel(A.afficher());
+
+    int ret=a.connect_arduino(); // lancer la connexion à arduino
+       switch(ret){
+       case(0):qDebug()<< "arduino is available and connected to : "<< a.getarduino_port_name();
+           break;
+       case(1):qDebug() << "arduino is available but not connected to :" <<a.getarduino_port_name();
+          break;
+       case(-1):qDebug() << "arduino is not available";
+       }
+        QObject::connect(a.getserial(),SIGNAL(readyRead()),this,SLOT(update_label())); // permet de lancer
+        //le slot update_label suite à la reception du signal readyRead (reception des données).
 
     //for email tab
     //connect(ui->sendBtn, SIGNAL(clicked()),this, SLOT(sendMail()));
@@ -211,7 +223,7 @@ void MainWindow::on_pdf_clicked()
         //document.setHtml(html);
         QPrinter printer(QPrinter::PrinterResolution);
         printer.setOutputFormat(QPrinter::PdfFormat);
-        printer.setOutputFileName("eya.pdf");
+        printer.setOutputFileName("eyaValidation.pdf");
         document->print(&printer);
 }
 
@@ -396,3 +408,25 @@ void MainWindow::on_ajouter_conge_clicked()
 
 
 }
+
+
+void MainWindow::update_label()
+{
+    dataa=a.read_from_arduino();
+
+    if(dataa=="v")
+
+        ui->label_access->setText("Porte ouverte , access désormais autorisé  ! "); // si les données reçues de arduino via la liaison série sont égales à 1
+    // alors afficher ce qui est écrit
+
+    else if (dataa=="n")
+
+        ui->label_access->setText("Attention ! Code erroné !");   // si les données reçues de arduino via la liaison série sont égales à 0
+     //alors afficher ce qui est écrit
+
+    else if (dataa =="s")
+        ui->label_access->setText("L'avocat a dépassé les tentatives d'essais autorisées !  ");
+
+}
+
+

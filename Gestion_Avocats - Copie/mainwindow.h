@@ -16,6 +16,7 @@
 #include <QtCharts/QCategoryAxis>
 #include <QtCharts/QPieSeries>
 #include <QtCharts/QPieSlice>
+#include "arduino.h"
 QT_CHARTS_USE_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -33,6 +34,8 @@ public:
         void PieChart();
 
 private slots:
+    void  update_label();
+
     void on_btn_ajouter_clicked();
 
     void on_btn_supprimer_clicked();
@@ -57,11 +60,14 @@ void on_Achercher_textChanged(const QString &arg1);
 
     void on_ajouter_conge_clicked();
 
+
 private:
     Ui::MainWindow *ui;
     Avocat A ;
     QStringList files;
     conge c ;
+    arduino a ;
+    QByteArray dataa;
 };
 
 #endif // MAINWINDOW_H

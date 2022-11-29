@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1495</width>
+    <width>1400</width>
     <height>751</height>
    </rect>
   </property>
@@ -19,7 +19,7 @@
      <rect>
       <x>20</x>
       <y>20</y>
-      <width>1441</width>
+      <width>1361</width>
       <height>651</height>
      </rect>
     </property>
@@ -30,7 +30,7 @@
      <enum>QTabWidget::Triangular</enum>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>8</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -364,7 +364,7 @@
       <property name="geometry">
        <rect>
         <x>270</x>
-        <y>150</y>
+        <y>140</y>
         <width>561</width>
         <height>231</height>
        </rect>
@@ -858,8 +858,8 @@
      <widget class="QTableView" name="tableView">
       <property name="geometry">
        <rect>
-        <x>80</x>
-        <y>60</y>
+        <x>50</x>
+        <y>40</y>
         <width>401</width>
         <height>301</height>
        </rect>
@@ -993,11 +993,80 @@
      <widget class="QTableView" name="tab_avocat_conge">
       <property name="geometry">
        <rect>
-        <x>540</x>
-        <y>60</y>
+        <x>460</x>
+        <y>40</y>
         <width>791</width>
         <height>301</height>
        </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_8">
+     <attribute name="title">
+      <string>Présence et Assiduité</string>
+     </attribute>
+     <widget class="QListView" name="listView">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>110</y>
+        <width>551</width>
+        <height>421</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_21">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>120</y>
+        <width>311</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>              Control d'acces des Avocats    </string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_access">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>290</y>
+        <width>401</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_22">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>220</y>
+        <width>251</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Verification en cours ...</string>
       </property>
      </widget>
     </widget>
@@ -1008,7 +1077,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1495</width>
+     <width>1400</width>
      <height>26</height>
     </rect>
    </property>

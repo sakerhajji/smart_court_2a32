@@ -5,7 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui sql network multimedia multimediawidgets charts printsupport widgets axcontainer printsupport
-
+QT       += serialport
 
 
 
@@ -28,6 +28,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    arduino.cpp \
     avocat.cpp \
     conge.cpp \
         main.cpp \
@@ -36,6 +37,7 @@ SOURCES += \
     smtp.cpp
 
 HEADERS += \
+    arduino.h \
     avocat.h \
     conge.h \
         mainwindow.h \
