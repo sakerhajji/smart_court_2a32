@@ -16,6 +16,7 @@
 #include <QPrinter>
 #include"affaire_juridique.h"
 #include "smtp.h"
+#include "arduino.h"
 
 namespace Ui {
 class MainWindow;
@@ -29,7 +30,9 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+
 private slots:
+    void update_label();
 void on_Ajouter_clicked();
 void on_afficher_clicked();
 void on_supprimer_clicked();
@@ -52,11 +55,18 @@ void on_pushButton_4_clicked();
 
 void on_login_clicked();
 
+void on_ON_clicked();
+
+void on_OFF_clicked();
+
+
 private:
     Ui::MainWindow *ui;
     affaire_juridique Aff ;
     QStringList files;
     bool logintest ;
+    QByteArray data; // variable contenant les données reçues
+    Arduino A; // objet temporaire
 
 };
 

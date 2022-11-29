@@ -16,7 +16,7 @@ class affaire_juridique
 {
     public:
         affaire_juridique();
-        affaire_juridique(QString numcas ,QString cin,QString nom,QString prenom,QString typecas,QString datecas,QString dateness,QString etat,QString sexe,QString metier,QString nbenfant);
+        affaire_juridique(QString numcas ,QString cin,QString nom,QString prenom,QString typecas,QString datecas,QString dateness,QString ETAT_CAS,QString sexe,QString metier,QString nbenfant);
         virtual ~affaire_juridique();
 
         QString Getnumcas() { return numcas; }
@@ -33,8 +33,8 @@ class affaire_juridique
         void Setdatecas(QString val) { datecas = val; }
         QString Getdateness() { return dateness; }
         void Setdateness(QString val) { dateness = val; }
-        QString Getetat() { return etat; }
-        void Setetat(QString val) { etat = val; }
+        QString GetETAT_CAS() { return ETAT_CAS; }
+        void SetETAT_CAS(QString val) { ETAT_CAS = val; }
         QString Getsexe() { return sexe; }
         void Setsexe(QString val) { sexe = val; }
         QString Getmetier() { return metier; }
@@ -48,6 +48,7 @@ class affaire_juridique
         QSqlQueryModel * chercher (QString) ;
         QSqlQueryModel * sortname (QString , QString) ;
         void cryptage () ;
+        bool Update_cas () ;
 
 
 
@@ -61,7 +62,7 @@ class affaire_juridique
         QString typecas;
         QString datecas;
         QString dateness;
-        QString etat;
+        QString ETAT_CAS;
         QString sexe;
         QString metier;
         QString nbenfant;

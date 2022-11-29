@@ -11,7 +11,18 @@ MainWindow::MainWindow(QWidget *parent) :
 {
         logintest = true ;
     ui->setupUi(this);
+    int ret=A.connect_arduino(); // lancer la connexion à arduino
+    switch(ret){
+    case(0):qDebug()<< "arduino is available and connected to : "<< A.getarduino_port_name();
+        break;
+    case(1):qDebug() << "arduino is available but not connected to :" <<A.getarduino_port_name();
+       break;
+    case(-1):qDebug() << "arduino is not available";
+    }
+     QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_label())); // permet de lancer
+     //le slot update_label suite à la reception du signal readyRead (reception des données).
 
+     A.write_to_arduino("6");
 }
 
 
@@ -19,9 +30,59 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
+    A.write_to_arduino("5");
+    cout<<"good bay\n" ;
+
     delete ui;
+
 }
 
+void MainWindow::update_label()
+{
+    data=A.read_from_arduino();
+    affaire_juridique Af ;
+
+
+    if(data=="1")
+
+        ui->label_3->setText("ON"); // si les données reçues de arduino via la liaison série sont égales à 1
+    // alors afficher ON
+
+    else if (data=="0")
+
+        ui->label_3->setText("OFF");   // si les données reçues de arduino via la liaison série sont égales à 0
+     //alors afficher ON
+    else if (data=="H")
+    {ui->label_3->setText("Pushed");
+    Af.Setnumcas(ui->comboBox_3->currentText() ) ;
+    QString p = "reporter";
+    Af.SetETAT_CAS(p)  ;
+    Af.cryptage();
+    QByteArray tmp ;
+    bool test = Af.Update_cas() ;
+
+  if(test)
+    {
+        QMessageBox::information(nullptr, QObject::tr("ok"),
+                    QObject::tr("Il y a quelque chose de dangereux le cas  reporter.\n"
+                                "Click Cancel pour sorti."), QMessageBox::Cancel);
+        A.write_to_arduino("4");
+        Af.cryptage();
+        p=Af.Getnumcas();
+        tmp=p.toUtf8();
+        A.write_to_arduino(tmp);
+
+
+
+
+   }
+    else
+        QMessageBox::critical(nullptr, QObject::tr("not OK"),
+                    QObject::tr("NO delete.\n"
+                                "Click Cancel to exit."), QMessageBox::Cancel);
+
+    }
+}
 
 void MainWindow::on_Ajouter_clicked()//add
 {
@@ -176,7 +237,7 @@ void MainWindow::on_comboBox_2_currentIndexChanged(const QString &arg1)//update 
    reverse(s.begin(),s.end()) ;
    { QSqlQuery qry ;
     qry.prepare("SELECT REVERSE (NUMCAS),REVERSE(CIN),REVERSE (NOM),REVERSE (PRENOM),REVERSE(TYPECAS),REVERSE(DATECAS),REVERSE(DATENESS)"
-                ",REVERSE(ETAT),REVERSE(SEXE),REVERSE(METIER),REVERSE(NBENFANT)FROM AFFAIRE_JURIDIQUE WHERE NUMCAS ="+s+"") ;
+                ",REVERSE(ETAT_CAS),REVERSE(SEXE),REVERSE(METIER),REVERSE(NBENFANT)FROM AFFAIRE_JURIDIQUE WHERE NUMCAS ="+s+"") ;
     QString numcas ;
     if (qry.exec() )
     {
@@ -230,7 +291,9 @@ void MainWindow::on_browseBtn_clicked()
 
 void MainWindow::on_sendBtn_clicked()
 {
+
    if (!logintest) {Smtp* smtp = new Smtp("saker.hajji@esprit.tn",ui->mail_pass->text(), "smtp.gmail.com");
+
     connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
 
     if( !files.isEmpty() )
@@ -267,9 +330,9 @@ void MainWindow :: on_pushButton_4_clicked()
                            <<  QString("<title>%1</title>\n").arg("eleve")
                            <<  "</head>\n"
                            "<body bgcolor=#CFC4E1 link=#5000A0>\n"
-                               " <h1>hello eyea </h1> <hr> <h3>nekteb ili nheb alih</h3> <hr>"
+                               " <h1> votre cas en pdf </h1> <hr>"
 
-                               "<table border=1 cellspacing=0 cellpadding=2>\n";
+                               "<table border=0 cellspacing=0 cellpadding=2>\n";
 
                    // headers
                        out << "<thead><tr bgcolor=#f0f0f0>";
@@ -317,10 +380,12 @@ void MainWindow::on_login_clicked()
     cout<<logintest<<endl;
     if (!logintest)
     {
+        A.write_to_arduino("3");
         ui->print_tab_4->setModel(Aff.afficher())  ;
         ui->print_tab_3->setModel(Aff.afficher()) ;
         ui->print_tab_2->setModel(Aff.afficher()) ;
         ui->print_tab->setModel(Aff.afficher()) ;
+        ui->print_tab_5->setModel(Aff.afficher()) ;
 
         QSqlQueryModel * modal=new QSqlQueryModel() ;
         QSqlQuery  qry ;
@@ -328,6 +393,7 @@ void MainWindow::on_login_clicked()
         qry.exec() ;
         modal->setQuery(qry) ;
         ui->comboBox_2->setModel(modal) ;
+        ui->comboBox_3->setModel(modal) ;
         QMessageBox::information(nullptr, QObject::tr("ok"),
                          QObject::tr("login successful.\n"
                                      "Click Cancel to exit."), QMessageBox::Cancel);
@@ -339,3 +405,15 @@ void MainWindow::on_login_clicked()
                      QObject::tr("verifier votre id ou motde pass svp .\n"
                                  "Click Cancel to exit."), QMessageBox::Cancel);
 }
+
+void MainWindow::on_ON_clicked()
+{
+   A.write_to_arduino("1"); //envoyer 1 à arduino
+}
+
+void MainWindow::on_OFF_clicked()
+{
+   A.write_to_arduino("0");  //envoyer 0 à arduino
+}
+
+

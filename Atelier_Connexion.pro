@@ -4,8 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql network multimedia multimediawidgets charts printsupport widgets axcontainer
-QT += printsupport
+QT       += core gui sql network multimedia multimediawidgets charts printsupport widgets axcontainer serialport printsupport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -27,6 +26,7 @@ CONFIG += c++11
 
 SOURCES += \
     affaire_juridique.cpp \
+    arduino.cpp \
         main.cpp \
         mainwindow.cpp \
     connection.cpp \
@@ -34,6 +34,7 @@ SOURCES += \
 
 HEADERS += \
     affaire_juridique.h \
+    arduino.h \
         mainwindow.h \
     connection.h \
     smtp.h
