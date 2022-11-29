@@ -1,5 +1,5 @@
 QT       += core gui sql network multimedia multimediawidgets charts printsupport widgets axcontainer
-
+QT+= serialport
 QT+= core gui printsupport
 QT+=sql
 QT += charts
@@ -19,6 +19,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    arduinoh.cpp \
     connection.cpp \
     digitalclock.cpp \
     exportexcelobject.cpp \
@@ -27,6 +28,7 @@ SOURCES += \
     salleaudience.cpp
 
 HEADERS += \
+    arduinoh.h \
     connection.h \
     digitalclock.h \
     exportexcelobject.h \

@@ -82,7 +82,7 @@ QSqlQueryModel * salleaudience::affichage()
     {
     QSqlQuery query;
 
-    query.prepare("update SALLEAUDIENCE set ID= :id , NBPLACE=:nbplace , CAMENMARCHE=:camenmarche , DISPO=:dispo where ID = :id )");
+    query.prepare("update SALLEAUDIENCE set ID= :id , NBPLACE=:nbplace , CAMENMARCHE=:camenmarche , DISPO=:dispo where ID = :id ");
     query.bindValue(":id",id);
     query.bindValue(":nbplace",nbplace);
     query.bindValue(":camenmarche",camenmarche);

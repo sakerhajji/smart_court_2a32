@@ -3,6 +3,7 @@
 #include "connection.h"
 #include "salleaudience.h"
 #include <QMainWindow>
+#include "arduinoh.h"
 
 
 
@@ -44,8 +45,17 @@ private slots:
 
    void on_excel_clicked();
 
+   void on_pushButton_4_clicked();
+
+   void on_pushButton_5_clicked();
+
+   void on_pushButton_6_clicked();
+
 private:
     Ui::MainWindow *ui;
     salleaudience p;
+    QByteArray data; // variable contenant les données reçues
+
+            Arduino A; // objet temporaire
 };
 #endif // MAINWINDOW_H

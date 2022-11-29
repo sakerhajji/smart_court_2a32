@@ -51,6 +51,20 @@ MainWindow::MainWindow(QWidget *parent)
     ui->nb->setValidator(new QIntValidator(1,999999, this));
     ui->c->setValidator(new QIntValidator(1,999999, this));
     ui->lineEdit_5->setValidator(new QIntValidator(1,999999, this));
+    QSettings settings(QSettings::IniFormat, QSettings::UserScope,
+                           QCoreApplication::organizationName(), QCoreApplication::applicationName());
+
+        ui->Map->dynamicCall("Navigate(const QString&)", "https://www.google.com/maps/place/ESPRIT/@36.9016729,10.1713215,15z");
+    int ret=A.connect_arduino();
+             switch (ret) {
+             case(0):qDebug()<<"arduino is available and connect to:"<<A.getarduino_port_name();
+                 break;
+             case(1):qDebug()<<"arduino is available but not connected to:"<<A.getarduino_port_name();
+                 break;
+             case(-1):qDebug()<<"arduino is not available";
+
+             }
+             QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_label()));
 
 
 }
@@ -270,5 +284,35 @@ void MainWindow::on_excel_clicked()
         QMessageBox::information(this, tr("Done"),
                                  QString(tr("%1 records exported!")).arg(retVal)
                                  );
+    }
+}
+
+
+
+void MainWindow::on_pushButton_5_clicked()
+{
+    A.write_to_arduino("0");  //envoyer 0 à arduino
+}
+
+void MainWindow::on_pushButton_6_clicked()
+{
+    QString ID=ui->lineEdit_6->text();
+        QSqlQuery query;
+        QByteArray message;
+        QString ch;
+        query.prepare("select DISPO from SALLEAUDIENCE where ID = "+ID+"");
+        if (query.exec())
+                            {
+                                while(query.next())
+                                {
+                                 ch =query.value(0).toString();
+
+
+
+                                }
+                                 message=ch.toUtf8();
+                                 A.write_to_arduino("4") ;
+                                 A.write_to_arduino(message) ;
+
     }
 }
