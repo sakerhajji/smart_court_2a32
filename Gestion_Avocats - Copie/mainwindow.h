@@ -30,11 +30,11 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     QChartView *chartView ;
-        void BarChart();
+        void BarChartAV();
         void PieChart();
 
 private slots:
-    void  update_label();
+    void  update_labelAV();
 
     void on_btn_ajouter_clicked();
 
@@ -48,11 +48,11 @@ void on_Achercher_textChanged(const QString &arg1);
 
     void on_btn_tri_clicked();
 
-    void on_pdf_clicked();
+    void on_pdf_AV_clicked();
 
-    void on_sendBtn_clicked();
+    void on_sendBtnAV_clicked();
 
-    void on_browseBtn_clicked();
+    void on_browseBtnAV_clicked();
 
     void on_btn_evaluer_clicked();
 
@@ -67,7 +67,7 @@ private:
     QStringList files;
     conge c ;
     arduino a ;
-    QByteArray dataa;
+    QByteArray dataaAV;
 };
 
 #endif // MAINWINDOW_H

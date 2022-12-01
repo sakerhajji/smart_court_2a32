@@ -8,16 +8,18 @@
 #include "smtp.h"
 #include <QSqlQuery>
 #include "arduino.h"
+#include "avocat.h"
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
 
-    ui->le_id->setValidator(new QIntValidator(0, 999999999, this));
+    ui->le_id->setValidator(new QIntValidator(0, 99999999999, this));
     ui->le_num_tel->setValidator(new QIntValidator(0, 999999999, this));
-    ui->table_avocat_2->setModel(A.afficher());
-    ui->table_avocat->setModel(A.afficher());
+    ui->table_avocat_2->setModel(A.afficherA());
+    ui->table_avocat->setModel(A.afficherA());
+    //ui->table_pres->setModel((A.afficherA_arduino()));
 
     int ret=a.connect_arduino(); // lancer la connexion à arduino
        switch(ret){
@@ -44,8 +46,8 @@ MainWindow::~MainWindow()
 void MainWindow::on_btn_ajouter_clicked()
 {
     int Id_Avocat=ui->le_id->text().toInt();
-    QString Nom=ui->le_nom->text();
-    QString Prenom=ui->le_prenom->text();
+    QString Nom=ui->le_nomA->text();
+    QString Prenom=ui->le_prenomA->text();
 
      QString  Date_naissance=ui->la_date->text();
     int Numero_telephone=ui->le_num_tel->text().toInt();
@@ -54,12 +56,12 @@ void MainWindow::on_btn_ajouter_clicked()
     Avocat A( Id_Avocat ,Nom ,Prenom,Date_naissance ,Numero_telephone,Nombre_Proces_Gagnes );
 
 
-    bool test=A.ajouter();
+    bool test=A.ajouterA();
     if(test)
     {
 
-        ui->table_avocat_2->setModel(A.afficher());
-        ui->table_avocat->setModel(A.afficher());
+        ui->table_avocat_2->setModel(A.afficherA());
+        ui->table_avocat->setModel(A.afficherA());
 
         QMessageBox::information(nullptr, QObject::tr("OK"),
         QObject::tr("Ajout effectué \n"
@@ -84,12 +86,12 @@ void MainWindow::on_btn_ajouter_clicked()
 void MainWindow::on_btn_supprimer_clicked()
 {
     int id=ui->le_id_supp->text().toInt();
-    bool test = A.supprimer(id) ;
+    bool test = A.supprimerA(id) ;
     QMessageBox msgBox ;
 
     if (test)
-         { ui->table_avocat->setModel(A.afficher());
-        ui->table_avocat_2->setModel(A.afficher());
+         { ui->table_avocat->setModel(A.afficherA());
+        ui->table_avocat_2->setModel(A.afficherA());
 
         msgBox.setText("Suppression réussite");
 
@@ -115,10 +117,10 @@ void MainWindow::on_btn_modifier_clicked()
 QMessageBox msgBox ;
 
 
-bool test= A1.modifier();
+bool test= A1.modifierA();
 if(test)
-{ ui->table_avocat->setModel(A1.afficher());
-  ui->table_avocat_2->setModel(A1.afficher());
+{ ui->table_avocat->setModel(A1.afficherA());
+  ui->table_avocat_2->setModel(A1.afficherA());
 
 
              msgBox.setText("Modification  réussite");
@@ -138,7 +140,7 @@ void MainWindow::on_btn_trouver_clicked()
 
     QString a = ui->Achercher->text();
 
-    ui->table_rechercher->setModel(A.chercher(a));
+    ui->table_rechercher->setModel(A.chercherA(a));
 }
 
 
@@ -148,7 +150,7 @@ void MainWindow::on_btn_trouver_clicked()
 void MainWindow::on_Achercher_textChanged(const QString &arg1)
 {
 
-    ui->table_rechercher->setModel(A.chercher(arg1));
+    ui->table_rechercher->setModel(A.chercherA(arg1));
 
 }
 
@@ -159,7 +161,7 @@ void MainWindow::on_btn_tri_clicked()
 
     QString b = (ui->radioB_croiss->isChecked())?"ASC":"DESC" ;
 
-    int x = ui->comboBox->currentIndex() ;
+    int x = ui->comboBoxEYA->currentIndex() ;
     QString a ;
     switch (x) {
     case 0 :a="NOMBRE_PROCES_GAGNES"; break ;
@@ -174,7 +176,7 @@ void MainWindow::on_btn_tri_clicked()
 
 
 
-void MainWindow::on_pdf_clicked()
+void MainWindow::on_pdf_AV_clicked()
 {
     QString strStream;
                 QTextStream out(&strStream);
@@ -227,7 +229,7 @@ void MainWindow::on_pdf_clicked()
         document->print(&printer);
 }
 
-void MainWindow::on_sendBtn_clicked()
+void MainWindow::on_sendBtnAV_clicked()
 {
 
     Smtp* smtp = new Smtp("eya.gadhoumi@esprit.tn",ui->mail_pass->text(), "smtp.gmail.com");
@@ -239,7 +241,7 @@ void MainWindow::on_sendBtn_clicked()
         smtp->sendMail("eya.gadhoumi@esprit.tn", ui->rcpt->text() , ui->subject->text(),ui->msg->toPlainText());
 }
 
-void MainWindow::on_browseBtn_clicked()
+void MainWindow::on_browseBtnAV_clicked()
 {
     files.clear();
 
@@ -269,7 +271,7 @@ void MainWindow::on_btn_evaluer_clicked()
     }
 }
 
-void MainWindow::BarChart()
+void MainWindow::BarChartAV()
 {
 QSqlQuery q1 , q2 , q3 , q4 ;
 qreal tot=0,c1=0,c2=0, c3= 0;
@@ -369,7 +371,7 @@ chartView->show();
 
 void MainWindow::on_btn_executer_clicked()
 {
-     BarChart();
+     BarChartAV();
 }
 
 void MainWindow::on_ajouter_conge_clicked()
@@ -410,21 +412,24 @@ void MainWindow::on_ajouter_conge_clicked()
 }
 
 
-void MainWindow::update_label()
+void MainWindow::update_labelAV()
 {
-    dataa=a.read_from_arduino();
+    dataaAV=a.read_from_arduino_avocat();
 
-    if(dataa=="v")
+    if(dataaAV=="v")
 
-        ui->label_access->setText("Porte ouverte , access désormais autorisé  ! "); // si les données reçues de arduino via la liaison série sont égales à 1
+       { ui->label_access->setText("Porte ouverte , access désormais autorisé  ! "); // si les données reçues de arduino via la liaison série sont égales à 1
     // alors afficher ce qui est écrit
+  // ui->table_pres->setModel((A.afficherA_arduino()));
+    }
 
-    else if (dataa=="n")
 
-        ui->label_access->setText("Attention ! Code erroné !");   // si les données reçues de arduino via la liaison série sont égales à 0
+     else if (dataaAV=="n")
+
+      {  ui->label_access->setText("Attention ! Code erroné !"); }  // si les données reçues de arduino via la liaison série sont égales à 0
      //alors afficher ce qui est écrit
 
-    else if (dataa =="s")
+    else if (dataaAV =="s")
         ui->label_access->setText("L'avocat a dépassé les tentatives d'essais autorisées !  ");
 
 }

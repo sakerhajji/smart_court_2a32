@@ -25,7 +25,7 @@ Avocat:: Avocat( int Id_Avocat , QString Nom  , QString Prenom  , QString Date_n
 
 
 
-bool Avocat:: ajouter()
+bool Avocat:: ajouterA()
 {
   //bool teest=false ;
   QSqlQuery query;
@@ -47,7 +47,7 @@ bool Avocat:: ajouter()
        return  query.exec();
 }
 
-QSqlQueryModel* Avocat :: afficher()
+QSqlQueryModel* Avocat :: afficherA()
 {
 
 QSqlQueryModel* model= new QSqlQueryModel();
@@ -64,7 +64,7 @@ return model ;
 
 }
 
-bool Avocat ::  supprimer(int Id_Avocat)
+bool Avocat ::  supprimerA(int Id_Avocat)
 {
 
     QSqlQuery query;
@@ -80,7 +80,7 @@ bool Avocat ::  supprimer(int Id_Avocat)
 
 /*************************************************************/
 
-bool Avocat ::  modifier()
+bool Avocat ::  modifierA()
   {
       QSqlQuery query;
       QString Id_Avocat_string=QString:: number(Id_Avocat);
@@ -98,7 +98,7 @@ bool Avocat ::  modifier()
 
 /*************************************************************/
 }
-QSqlQueryModel* Avocat :: chercher(QString a)
+QSqlQueryModel* Avocat :: chercherA(QString a)
 {
 
 
@@ -187,6 +187,21 @@ QSqlQueryModel* Avocat :: evaluerE()
     model->setHeaderData(5, Qt::Horizontal, QObject :: tr("Telephone "));
     return model ;
 
+}
+
+QSqlQueryModel * Avocat :: afficherA_arduino()
+{
+    QSqlQueryModel* model= new QSqlQueryModel();
+
+    model->setQuery("SELECT* FROM avocat WHERE ID_AVOCAT = 11822123556 ");
+     model->setHeaderData(0, Qt::Horizontal, QObject :: tr("Identifiant"));
+     model->setHeaderData(1, Qt::Horizontal, QObject :: tr("Nom"));
+     model->setHeaderData(2, Qt::Horizontal, QObject :: tr("Prenom"));
+     model->setHeaderData(3, Qt::Horizontal, QObject :: tr("Naissance"));
+     model->setHeaderData(4, Qt::Horizontal, QObject :: tr("Proces gagnes"));
+     model->setHeaderData(5, Qt::Horizontal, QObject :: tr("Telephone "));
+
+    return model ;
 }
 
 

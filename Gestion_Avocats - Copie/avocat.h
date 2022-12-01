@@ -2,6 +2,7 @@
 #define AVOCAT_H
 #include <QString>
 #include <QSqlQueryModel>
+#include "arduino.h"
 //#include <bits/stdc++.h>
 //using namespace std ;
 class Avocat
@@ -22,15 +23,16 @@ public:
     void setDate_naissance(QString val){Date_naissance =val ;}
     void setNumero_telephone(int val){Numero_telephone =val ;}
     void setNombre_proces_gagnes(int val ){Nombre_Proces_Gagnes =val ;}
-    bool ajouter();
-    bool supprimer(int Id_Avocat );
-    QSqlQueryModel* afficher();
-    bool  modifier () ;
-    QSqlQueryModel*  chercher(QString a  );
+    bool ajouterA();
+    bool supprimerA(int Id_Avocat );
+    QSqlQueryModel* afficherA();
+    bool  modifierA () ;
+    QSqlQueryModel*  chercherA(QString a  );
     QSqlQueryModel*  sort(QString a , QString b) ;
     QSqlQueryModel*  evaluerD();
     QSqlQueryModel*  evaluerM();
     QSqlQueryModel*  evaluerE();
+    QSqlQueryModel* afficherA_arduino();
 
 private :
     int Id_Avocat , Nombre_Proces_Gagnes, Numero_telephone   ;
