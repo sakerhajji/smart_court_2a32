@@ -17,10 +17,10 @@
    <widget class="QTabWidget" name="update">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>10</y>
-      <width>1191</width>
-      <height>651</height>
+      <x>0</x>
+      <y>0</y>
+      <width>1211</width>
+      <height>661</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -30,7 +30,7 @@
      <enum>QTabWidget::Triangular</enum>
     </property>
     <property name="currentIndex">
-     <number>6</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
@@ -39,9 +39,9 @@
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>-104</x>
-        <y>-50</y>
-        <width>1231</width>
+        <x>-70</x>
+        <y>-20</y>
+        <width>1261</width>
         <height>711</height>
        </rect>
       </property>
@@ -55,8 +55,8 @@
      <widget class="QLineEdit" name="id">
       <property name="geometry">
        <rect>
-        <x>620</x>
-        <y>200</y>
+        <x>660</x>
+        <y>230</y>
         <width>281</width>
         <height>31</height>
        </rect>
@@ -79,8 +79,8 @@ border : none ;</string>
      <widget class="QLineEdit" name="password">
       <property name="geometry">
        <rect>
-        <x>620</x>
-        <y>310</y>
+        <x>660</x>
+        <y>340</y>
         <width>271</width>
         <height>31</height>
        </rect>
@@ -106,10 +106,10 @@ border : none ;</string>
      <widget class="QPushButton" name="login">
       <property name="geometry">
        <rect>
-        <x>630</x>
-        <y>380</y>
-        <width>231</width>
-        <height>61</height>
+        <x>680</x>
+        <y>410</y>
+        <width>241</width>
+        <height>71</height>
        </rect>
       </property>
       <property name="font">
@@ -659,7 +659,7 @@ border-bottom-right-radius : 20px ; </string>
        </property>
       </widget>
      </widget>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="Sort_af">
       <property name="geometry">
        <rect>
         <x>610</x>
@@ -672,7 +672,7 @@ border-bottom-right-radius : 20px ; </string>
        <string>sort</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="search">
       <property name="geometry">
        <rect>
         <x>730</x>
@@ -719,7 +719,7 @@ border-bottom-right-radius : 20px ; </string>
        <string>   Recherche</string>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox">
+     <widget class="QComboBox" name="sortBox">
       <property name="geometry">
        <rect>
         <x>700</x>
@@ -816,7 +816,7 @@ border-bottom-right-radius : 20px ; </string>
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_4">
+     <widget class="QPushButton" name="PDF">
       <property name="geometry">
        <rect>
         <x>870</x>
@@ -838,13 +838,13 @@ border-bottom-right-radius : 20px ; </string>
      <zorder>afficher</zorder>
      <zorder>pushButton_5</zorder>
      <zorder>widget_2</zorder>
-     <zorder>pushButton</zorder>
+     <zorder>Sort_af</zorder>
      <zorder>chercher</zorder>
-     <zorder>pushButton_3</zorder>
-     <zorder>comboBox</zorder>
+     <zorder>search</zorder>
+     <zorder>sortBox</zorder>
      <zorder>decroissant</zorder>
      <zorder>croissant</zorder>
-     <zorder>pushButton_4</zorder>
+     <zorder>PDF</zorder>
     </widget>
     <widget class="QWidget" name="tab_4">
      <attribute name="title">
@@ -1321,7 +1321,7 @@ padding-top:10px ;
        <string>Metier</string>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox_2">
+     <widget class="QComboBox" name="UpdateBox">
       <property name="geometry">
        <rect>
         <x>160</x>
@@ -1535,7 +1535,7 @@ border-bottom-right-radius : 20px ; </string>
        </property>
       </widget>
      </widget>
-     <widget class="QComboBox" name="comboBox_3">
+     <widget class="QComboBox" name="ardouinoBox">
       <property name="geometry">
        <rect>
         <x>130</x>
@@ -1599,18 +1599,18 @@ border-bottom-right-radius : 20px ; </string>
   <tabstop>Ajouter</tabstop>
   <tabstop>pushButton_2</tabstop>
   <tabstop>chercher</tabstop>
-  <tabstop>pushButton_3</tabstop>
+  <tabstop>search</tabstop>
   <tabstop>afficher</tabstop>
   <tabstop>pushButton_5</tabstop>
-  <tabstop>pushButton</tabstop>
-  <tabstop>comboBox</tabstop>
+  <tabstop>Sort_af</tabstop>
+  <tabstop>sortBox</tabstop>
   <tabstop>croissant</tabstop>
   <tabstop>decroissant</tabstop>
-  <tabstop>pushButton_4</tabstop>
+  <tabstop>PDF</tabstop>
   <tabstop>print_tab</tabstop>
   <tabstop>NUMcas</tabstop>
   <tabstop>supprimer</tabstop>
-  <tabstop>comboBox_2</tabstop>
+  <tabstop>UpdateBox</tabstop>
   <tabstop>NumCas_2</tabstop>
   <tabstop>Cin_2</tabstop>
   <tabstop>TypeCas_2</tabstop>

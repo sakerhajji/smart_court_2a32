@@ -37,26 +37,16 @@ void on_Ajouter_clicked();
 void on_afficher_clicked();
 void on_supprimer_clicked();
 void on_Update_clicked();
-void on_pushButton_3_clicked();
-void on_pushButton_clicked();
-
-void on_comboBox_2_currentIndexChanged(const QString &arg1);
-
+void on_search_clicked();
+void on_Sort_af_clicked();
+void on_UpdateBox_currentIndexChanged(const QString &arg1);
 void on_chercher_textChanged(const QString &arg1);
-
 void on_browseBtn_clicked();
-
 void on_sendBtn_clicked();
 void mailSent(QString);
-
-void on_pushButton_4_clicked();
-
-
-
+void on_PDF_clicked();
 void on_login_clicked();
-
 void on_ON_clicked();
-
 void on_OFF_clicked();
 
 

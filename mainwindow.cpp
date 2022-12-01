@@ -54,7 +54,7 @@ void MainWindow::update_label()
      //alors afficher ON
     else if (data=="H")
     {ui->label_3->setText("Pushed");
-    Af.Setnumcas(ui->comboBox_3->currentText() ) ;
+    Af.Setnumcas(ui->ardouinoBox->currentText() ) ;
     QString p = "reporter";
     Af.SetETAT_CAS(p)  ;
     Af.cryptage();
@@ -82,6 +82,12 @@ void MainWindow::update_label()
                                 "Click Cancel to exit."), QMessageBox::Cancel);
 
     }
+
+    ui->print_tab_4->setModel(Aff.afficher())  ;
+    ui->print_tab_3->setModel(Aff.afficher()) ;
+    ui->print_tab_2->setModel(Aff.afficher()) ;
+    ui->print_tab->setModel(Aff.afficher()) ;
+    ui->print_tab_5->setModel(Aff.afficher()) ;
 }
 
 void MainWindow::on_Ajouter_clicked()//add
@@ -118,7 +124,14 @@ af.cryptage();
 
  /***********************************************************************************************************/
 
- ui->print_tab_2->setModel(Aff.afficher())  ;}
+ ui->print_tab_2->setModel(Aff.afficher())  ;
+ ui->print_tab_4->setModel(Aff.afficher())  ;
+ ui->print_tab_3->setModel(Aff.afficher()) ;
+ ui->print_tab_2->setModel(Aff.afficher()) ;
+ ui->print_tab->setModel(Aff.afficher()) ;
+ ui->print_tab_5->setModel(Aff.afficher()) ;
+
+    }
 
 }
 
@@ -189,7 +202,7 @@ af.cryptage();
  qry.prepare("SELECT REVERSE (NUMCAS) FROM AFFAIRE_JURIDIQUE ") ;
  qry.exec() ;
  modal->setQuery(qry) ;
- ui->comboBox_2->setModel(modal) ;
+ ui->UpdateBox->setModel(modal) ;
 
  /***********************************************************************************************************/
 
@@ -199,7 +212,7 @@ af.cryptage();
 
 }
 
-void MainWindow::on_pushButton_3_clicked()//search
+void MainWindow::on_search_clicked()//search
 {
     if (!logintest)
     {QString s = ui->chercher->text() ;
@@ -208,11 +221,11 @@ void MainWindow::on_pushButton_3_clicked()//search
 
 }
 
-void MainWindow::on_pushButton_clicked()//sort
+void MainWindow::on_Sort_af_clicked()//sort
 {
     if (!logintest){
    QString b = (ui->croissant->isChecked() )?"ASC":"DESC" ;
-   QString a = ui->comboBox->currentText() ;
+   QString a = ui->sortBox->currentText() ;
    string str= a.toStdString();
        if (str=="Numero de cas") a="NUMCAS" ;
        if (str=="Cin") a="CIN" ;
@@ -228,11 +241,11 @@ void MainWindow::on_pushButton_clicked()//sort
        ui->print_tab->setModel(Aff.sortname(a,b) ) ;}
 }
 
-void MainWindow::on_comboBox_2_currentIndexChanged(const QString &arg1)//update box
+void MainWindow::on_UpdateBox_currentIndexChanged(const QString &arg1)//update box
 {
     QString s= arg1 ;
    if (!logintest)
-    //QString numcas=ui->comboBox_2->currentText() ;
+    //QString numcas=ui->UpdateBox->currentText() ;
 
    reverse(s.begin(),s.end()) ;
    { QSqlQuery qry ;
@@ -314,7 +327,7 @@ if (!logintest)
     ui->msg->clear();
     ui->mail_pass->clear();}
 }
-void MainWindow :: on_pushButton_4_clicked()
+void MainWindow :: on_PDF_clicked()
 {
     if (!logintest)
     {
@@ -367,6 +380,7 @@ void MainWindow :: on_pushButton_4_clicked()
            printer.setOutputFormat(QPrinter::PdfFormat);
            printer.setOutputFileName("saker.pdf");
            document->print(&printer); }
+    cout<<"pdf"<<endl ;
 }
 
 
@@ -392,8 +406,8 @@ void MainWindow::on_login_clicked()
         qry.prepare("SELECT REVERSE (NUMCAS) FROM AFFAIRE_JURIDIQUE ") ;
         qry.exec() ;
         modal->setQuery(qry) ;
-        ui->comboBox_2->setModel(modal) ;
-        ui->comboBox_3->setModel(modal) ;
+        ui->UpdateBox->setModel(modal) ;
+        ui->ardouinoBox->setModel(modal) ;
         QMessageBox::information(nullptr, QObject::tr("ok"),
                          QObject::tr("login successful.\n"
                                      "Click Cancel to exit."), QMessageBox::Cancel);
