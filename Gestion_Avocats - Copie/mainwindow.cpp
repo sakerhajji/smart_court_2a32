@@ -15,21 +15,21 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->le_id->setValidator(new QIntValidator(0, 99999999999, this));
+    ui->le_id->setValidator(new QIntValidator(0, 999999999, this));
     ui->le_num_tel->setValidator(new QIntValidator(0, 999999999, this));
     ui->table_avocat_2->setModel(A.afficherA());
     ui->table_avocat->setModel(A.afficherA());
     //ui->table_pres->setModel((A.afficherA_arduino()));
 
-    int ret=a.connect_arduino(); // lancer la connexion à arduino
+    int ret=aav.connect_arduino(); // lancer la connexion à arduino
        switch(ret){
-       case(0):qDebug()<< "arduino is available and connected to : "<< a.getarduino_port_name();
+       case(0):qDebug()<< "arduino is available and connected to : "<< aav.getarduino_port_name();
            break;
-       case(1):qDebug() << "arduino is available but not connected to :" <<a.getarduino_port_name();
+       case(1):qDebug() << "arduino is available but not connected to :" <<aav.getarduino_port_name();
           break;
        case(-1):qDebug() << "arduino is not available";
        }
-        QObject::connect(a.getserial(),SIGNAL(readyRead()),this,SLOT(update_label())); // permet de lancer
+        QObject::connect(aav.getserial(),SIGNAL(readyRead()),this,SLOT(update_label())); // permet de lancer
         //le slot update_label suite à la reception du signal readyRead (reception des données).
 
     //for email tab
@@ -414,7 +414,7 @@ void MainWindow::on_ajouter_conge_clicked()
 
 void MainWindow::update_labelAV()
 {
-    dataaAV=a.read_from_arduino_avocat();
+    dataaAV=aav.read_from_arduino_avocat();
 
     if(dataaAV=="v")
 

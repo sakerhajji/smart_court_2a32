@@ -66,7 +66,7 @@ private:
     Avocat A ;
     QStringList files;
     conge c ;
-    arduino a ;
+    arduino aav ;
     QByteArray dataaAV;
 };
 
