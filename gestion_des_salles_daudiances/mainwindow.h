@@ -22,34 +22,35 @@ public:
 
 
 private slots:
-    void on_pushButton_ajouter_clicked();
+    void on_pushButton_ajouter_AZ_clicked();
 
-    void on_pushButton_supprimer_clicked();
+    void on_pushButton_supprimer_AZ_clicked();
 
 
-    void on_update_clicked();
+    void on_updateBtnAZ_clicked();
 
-    void on_pdfbutton_clicked();
+    void on_pdfbuttonAZ_clicked();
 
-    void on_tributton_clicked();
+    void on_tributtonAZ_clicked();
 
-    void on_trierbutton2_clicked();
-
-    void on_recherchebutton_textChanged(const QString &arg1);
-
-   void on_stat_clicked();
+    void on_trier2AZ_clicked();
 
 
 
-   void on_bb_clicked();
 
-   void on_excel_clicked();
 
-   void on_pushButton_4_clicked();
+   void on_statbtnAZ_clicked();
 
-   void on_pushButton_5_clicked();
+   void on_excelAZ_clicked();
 
-   void on_pushButton_6_clicked();
+
+
+   void on_btnVersArduinoAZ_clicked();
+
+
+   void on_btnVerifAZ_clicked();
+
+   void on_TrouverAZIZ_textChanged(const QString &arg1);
 
 private:
     Ui::MainWindow *ui;
@@ -58,4 +59,4 @@ private:
 
             Arduino A; // objet temporaire
 };
-#endif // MAINWINDOW_H
+#endif

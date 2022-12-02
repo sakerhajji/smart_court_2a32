@@ -18,10 +18,6 @@ public:
     salleaudience();
     salleaudience(int,int,int,QString);
 
-    /*int getid(){return  id;}
-    int getnbplace(){return  nbplace;}
-    int getcamenmarche(){return  camenmarche;}
-    QString getdispo(){return   dispo;}*/
     QStringList listedispo(QString var) ;
    int calcul_dispo(QString adresse,QString val);
     int getid();

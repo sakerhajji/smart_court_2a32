@@ -51,4 +51,4 @@ private:
     QList<EEO_Field *> fieldList;
 };
 
-#endif // EXPORTEXCELOBJECT_H
+#endif

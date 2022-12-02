@@ -77,7 +77,7 @@ MainWindow::~MainWindow()
 
 
 
-void MainWindow::on_pushButton_ajouter_clicked()
+void MainWindow::on_pushButton_ajouter_AZ_clicked()
 {
     int id=ui->lineEdit->text().toInt();
     int nbplace=ui->lineEdit_2->text().toInt();
@@ -95,17 +95,18 @@ void MainWindow::on_pushButton_ajouter_clicked()
                                "Click Cancel to exit."), QMessageBox::Cancel);
      }
     else
-
+{QMessageBox::critical(nullptr, QObject::tr("ajout impossible"),
+                       QObject::tr("le ID taper existe déja"), QMessageBox::Cancel);
         QMessageBox::critical(nullptr, QObject::tr("Not Ok"),
         QObject::tr("Ajout non effectué.\n"
                                "Click Cancel to exit."), QMessageBox::Cancel);
 
-
+}
 }
 
 
 
-void MainWindow::on_pushButton_supprimer_clicked()
+void MainWindow::on_pushButton_supprimer_AZ_clicked()
 {
     int id=ui->lineEdit_5->text().toInt();
        bool test=p.suppression(id);
@@ -125,7 +126,7 @@ void MainWindow::on_pushButton_supprimer_clicked()
 }
 
 
-void MainWindow::on_update_clicked()
+void MainWindow::on_updateBtnAZ_clicked()
 {
     int id=ui->id->text().toInt();
     int nbplace=ui->nb->text().toInt();
@@ -149,7 +150,7 @@ void MainWindow::on_update_clicked()
 
 
 
-void MainWindow::on_pdfbutton_clicked()
+void MainWindow::on_pdfbuttonAZ_clicked()
 {
     QString strStream;
                                     QTextStream out(&strStream);
@@ -204,21 +205,17 @@ void MainWindow::on_pdfbutton_clicked()
 
 }
 
-void MainWindow::on_tributton_clicked()
+void MainWindow::on_tributtonAZ_clicked()
 {
 ui->tableS->setModel(p.trie());
 }
 
-void MainWindow::on_trierbutton2_clicked()
+void MainWindow::on_trier2AZ_clicked()
 {
 ui->tableS->setModel(p.trie2());
 }
 
 
-void MainWindow::on_recherchebutton_textChanged(const QString &arg1)
-{
-    ui->tableS->setModel(p.recherche(arg1));
-}
 
 
 
@@ -227,7 +224,8 @@ void MainWindow::on_recherchebutton_textChanged(const QString &arg1)
 
 
 
-void MainWindow::on_bb_clicked()
+
+void MainWindow::on_statbtnAZ_clicked()
 {
 
 
@@ -255,11 +253,11 @@ void MainWindow::on_bb_clicked()
         QChartView *chartview=new QChartView(chart);
         QGridLayout *mainLayout=new QGridLayout();
         mainLayout->addWidget(chartview,0,0);
-        ui->bb->setLayout(mainLayout);
+        ui->statbtnAZ->setLayout(mainLayout);
 }
 
 
-void MainWindow::on_excel_clicked()
+void MainWindow::on_excelAZ_clicked()
 {
     QString fileName = QFileDialog::getSaveFileName(this, tr("Excel file"), qApp->applicationDirPath (),
                                                     tr("Excel Files (*.xls)"));
@@ -273,10 +271,6 @@ void MainWindow::on_excel_clicked()
     obj.addField(1, "nbplace", "int");
     obj.addField(2, "camenmarche", "int");
     obj.addField(3, "dispo", "char(20)");
-   /* obj.addField(4, "date de depart", "char(20)");
-    obj.addField(5, "pilote", "char(20)");
-    obj.addField(5, "avion", "char(20)");*/
-
 
     int retVal = obj.export2Excel();
     if( retVal > 0)
@@ -289,30 +283,54 @@ void MainWindow::on_excel_clicked()
 
 
 
-void MainWindow::on_pushButton_5_clicked()
+void MainWindow::on_btnVersArduinoAZ_clicked()
 {
     A.write_to_arduino("0");  //envoyer 0 à arduino
 }
 
-void MainWindow::on_pushButton_6_clicked()
+void MainWindow::on_btnVerifAZ_clicked()
 {
     QString ID=ui->lineEdit_6->text();
         QSqlQuery query;
         QByteArray message;
         QString ch;
-        query.prepare("select DISPO from SALLEAUDIENCE where ID = "+ID+"");
+        int idd,id2;
+        id2=ui->lineEdit_6->text().toInt();
+            QSqlQuery query1;
+
+
+            query1.prepare("select ID from SALLEAUDIENCE where ID=:id");
+            query1.bindValue(":id", ID);
+            query1.exec();
+            while(query1.next())
+          {
+
+           idd=query1.value(0).toInt();
+           }
+
+        if(idd==id2)
+       {      QMessageBox::information(nullptr, QObject::tr("vérification en cours"),
+                                       QObject::tr("vérification réussite"), QMessageBox::Cancel);
+                query.prepare("select DISPO from SALLEAUDIENCE where ID = "+ID+"");
         if (query.exec())
+
                             {
                                 while(query.next())
                                 {
                                  ch =query.value(0).toString();
 
-
-
                                 }
+
                                  message=ch.toUtf8();
                                  A.write_to_arduino("4") ;
                                  A.write_to_arduino(message) ;
 
-    }
+    }}
+        else  {  QMessageBox::critical(nullptr, QObject::tr("pas de vérification"),
+                                                    QObject::tr("ID n'existe pas"), QMessageBox::Cancel); }
+}
+
+void MainWindow::on_TrouverAZIZ_textChanged(const QString &arg1)
+{
+     ui->tableS->setModel(p.recherche(arg1));
 }
