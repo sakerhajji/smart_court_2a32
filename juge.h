@@ -30,6 +30,8 @@ public:
     QSqlQueryModel*  chercher2(QString a) ;
     void notifcation();
    QSqlQueryModel* affichercalendrier(QDate);
+   QSqlQueryModel* afficherarduino(int a);
+
 
 
 

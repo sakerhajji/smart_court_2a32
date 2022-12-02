@@ -19,6 +19,7 @@
 #include "juge.h"
 #include "smtp.h"
 #include <bits/stdc++.h>
+#include "arduino.h"
 using namespace  std ;
 
 
@@ -35,29 +36,32 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_clicked();
-
-    void on_bt_supprimer_clicked();
 
 
-    void on_modiferbutton_clicked();
+    void update_label();
+    void on_yas_ajouter_clicked();
 
-    void on_radioButton_clicked();
+    void on_yas_supprimer_clicked();
 
-    void on_radioButton_2_clicked();
+
+    void on_yas_modifer_clicked();
+
+    void on_yas_tri1_clicked();
+
+    void on_yas_tri2_clicked();
 
     void on_chercher_textChanged(const QString &arg1);
 
-    void on_pushButton_2_clicked();
+    void on_yas_chercher_clicked();
 
     void on_tabWidget_currentChanged(int index);
 
-    void on_browseBtn_clicked();
+    void on_yas_browse_clicked();
 
-    void on_sendBtn_clicked();
+    void on_yas_send_clicked();
     void mailSent(QString status) ;
 
-    void on_pdf_clicked();
+    void on_yas_pdf_clicked();
 
     void on_calendarWidget_clicked(const QDate &date);
 
@@ -65,15 +69,21 @@ private slots:
 
     void on_done_clicked();
 
-    void on_pushButton_3_clicked();
+    void on_yas_done_clicked();
 
-    void on_pushButton_4_clicked();
+    void on_yas_verifier_clicked();
+
+    void on_tabWidget_tabBarClicked(int index);
+
+    void on_le_cin_supp_cursorPositionChanged(int arg1, int arg2);
 
 private:
     Ui::MainWindow *ui;
     Juge j;
     QStringList files;
     QSystemTrayIcon *msystemtryicon;
+    QByteArray data;
+    Arduino A;
 };
 
 #endif // MAINWINDOW_H

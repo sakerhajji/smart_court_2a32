@@ -58,7 +58,7 @@ bool Juge::supprimer(QString cin_j)
 {
 
     QSqlQuery query;
-    query.prepare("delete from juge where cin_j= :cin_j");
+    query.prepare("DELETE from JUGE where CIN_J= :cin_j");
     query.bindValue(":cin_j", cin_j);
     return query.exec();
 
@@ -84,7 +84,9 @@ return model;
 QSqlQueryModel* Juge::affichercalendrier(QDate dateselected)
 {QSqlQueryModel* model=new QSqlQueryModel();
 
-
+    model->setQuery("SELECT   date1 , nom , MOTIF "
+                        "FROM  essaie "
+                        "NATURAL JOIN CONGE  dateselected");
 
 
 
@@ -212,4 +214,20 @@ void Juge::notifcation()
               }
 
   }
+}
+
+QSqlQueryModel* Juge::afficherarduino(int a)
+{QSqlQueryModel* model=new QSqlQueryModel();
+
+
+    model->setQuery("SELECT FROM juge");
+    model->setHeaderData(0, Qt::Horizontal,QObject::tr("identifiant"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("nom"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("prenom"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("num_bureau"));
+    model->setHeaderData(4, Qt::Horizontal, QObject::tr("nb_process_gagner"));
+
+
+
+return model;
 }

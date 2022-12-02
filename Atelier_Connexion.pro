@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui sql network multimedia multimediawidgets charts printsupport widgets axcontainer
+QT += core gui serialport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -25,6 +26,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    arduino.cpp \
     juge.cpp \
         main.cpp \
         mainwindow.cpp \
@@ -32,6 +34,7 @@ SOURCES += \
     smtp.cpp
 
 HEADERS += \
+    arduino.h \
     juge.h \
         mainwindow.h \
     connection.h \
@@ -58,5 +61,8 @@ QMAKE_CXXFLAGS += -std=gnu++14
 
 RESOURCES += \
     res.qrc
+
+
+
 
 
