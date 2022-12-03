@@ -65,7 +65,7 @@ bool SALLE_AUDIENCE::suppression(int ID_SALLE)
        idd=query.value(0).toInt();
        }
         if (idd!=ID_SALLE) {  QMessageBox::critical(nullptr, QObject::tr("supp impossible"),
-       QObject::tr("le ID_SALLE taper n'existe pas"), QMessageBox::Cancel); }
+       QObject::tr("le id taper n'existe pas"), QMessageBox::Cancel); }
         else {
             query1.prepare("Delete from SALLE_AUDIENCE where ID_SALLE= :ID_SALLE");
             query1.bindValue(":ID_SALLE", ID_SALLE);
