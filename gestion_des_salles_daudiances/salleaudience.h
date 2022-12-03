@@ -9,14 +9,14 @@
 class salleaudience
 {
 private:
-    int id;
-    int nbplace;
-    int camenmarche;
-    QString dispo;
+    int ID_SALLE;
+    int NOMBRE_PLACES_TOTAL;
+    int NOMBRES_CAMER_ACTIVEES;
+    QString DISPONIBILTE;
 
 public:
-    salleaudience();
-    salleaudience(int,int,int,QString);
+    SALLE_AUDIENCE();
+    SALLE_AUDIENCE(int,int,int,QString);
 
     QStringList listedispo(QString var) ;
    int calcul_dispo(QString adresse,QString val);
@@ -36,7 +36,7 @@ public:
     bool modification();
     QSqlQueryModel* trie();
     QSqlQueryModel* trie2();
-    QSqlQueryModel*recherche(QString id);
+    QSqlQueryModel*recherche(QString ID_SALLE);
 
 
 

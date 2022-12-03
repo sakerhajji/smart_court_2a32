@@ -5,70 +5,70 @@
 #include <QtDebug>
 #include <QtWidgets>
 
-salleaudience::salleaudience()
+SALLE_AUDIENCE::SALLE_AUDIENCE()
 {
-dispo="";
-id=0;
-nbplace=0;
-camenmarche=0;
+DISPONIBILTE="";
+ID_SALLE=0;
+NOMBRE_PLACES_TOTAL=0;
+NOMBRES_CAMER_ACTIVEES=0;
 }
 
-salleaudience::salleaudience( int id, int nbplace, int camenmarche,QString dispo)
+SALLE_AUDIENCE::SALLE_AUDIENCE( int NOMBRE_PLACES_TOTAL, int NOMBRE_PLACES_TOTAL, int NOMBRES_CAMER_ACTIVEES,QString DISPONIBILTE)
 {
-    this->dispo=dispo;
-    this->id=id;
-    this->nbplace=nbplace;
-    this->camenmarche=camenmarche;
+    this->DISPONIBILTE=DISPONIBILTE;
+    this->ID_SALLE=ID_SALLE;
+    this->NOMBRE_PLACES_TOTAL=NOMBRE_PLACES_TOTAL;
+    this->NOMBRES_CAMER_ACTIVEES=NOMBRES_CAMER_ACTIVEES;
 
 }
 
 
-QString salleaudience::getdispo(){ return dispo;}
-int salleaudience::getid(){ return id;}
-int salleaudience::getnbplace(){ return nbplace;}
-int salleaudience::getcamenmarche(){ return camenmarche;}
+QString SALLE_AUDIENCE::getdispo(){ return DISPONIBILTE;}
+int SALLE_AUDIENCE::getid(){ return ID_SALLE;}
+int SALLE_AUDIENCE::getnbplace(){ return NOMBRE_PLACES_TOTAL;}
+int SALLE_AUDIENCE::getcamenmarche(){ return NOMBRES_CAMER_ACTIVEES;}
 
-void salleaudience::setdispo(QString dispo){this->dispo=dispo; }
-void salleaudience::setid(int id){this->id=id; }
-void salleaudience::setcamenmarche(int camenmarche){this->camenmarche=camenmarche; }
-void salleaudience::setnbplace(int nbplace){this->nbplace=nbplace; }
+void SALLE_AUDIENCE::setdispo(QString DISPONIBILTE){this->DISPONIBILTE=DISPONIBILTE; }
+void SALLE_AUDIENCE::setid(int ID_SALLE){this->ID_SALLE=ID_SALLE; }
+void SALLE_AUDIENCE::setcamenmarche(int NOMBRES_CAMER_ACTIVEES){this->NOMBRES_CAMER_ACTIVEES=NOMBRES_CAMER_ACTIVEES; }
+void SALLE_AUDIENCE::setnbplace(int NOMBRE_PLACES_TOTAL){this->NOMBRE_PLACES_TOTAL=NOMBRE_PLACES_TOTAL; }
 
 
-bool salleaudience::ajout()
+bool SALLE_AUDIENCE::ajout()
 {
     QSqlQuery query;
-    QString id_string = QString::number(id);
-    QString res = QString::number(nbplace);
-    QString res1 = QString::number(camenmarche);
-    query.prepare("insert into SALLEAUDIENCE (id,nbplace,camenmarche,dispo)"
-                  "values (:id,:nbplace,:camenmarche,:dispo)");
-    query.bindValue(":id",id_string);
-    query.bindValue(":nbplace",res);
-    query.bindValue(":camenmarche",res1);
-    query.bindValue(":dispo",dispo);
+    QString id_string = QString::number(ID_SALLE);
+    QString res = QString::number(NOMBRE_PLACES_TOTAL);
+    QString res1 = QString::number(NOMBRES_CAMER_ACTIVEES);
+    query.prepare("insert into SALLE_AUDIENCE (id,NOMBRE_PLACES_TOTAL,NOMBRES_CAMER_ACTIVEES,DISPONIBILTE)"
+                  "values (:ID_SALLE,:NOMBRE_PLACES_TOTAL,:NOMBRES_CAMER_ACTIVEES,:DISPONIBILTE)");
+    query.bindValue(":ID_SALLE",id_string);
+    query.bindValue(":NOMBRE_PLACES_TOTAL",res);
+    query.bindValue(":NOMBRES_CAMER_ACTIVEES",res1);
+    query.bindValue(":DISPONIBILTE",DISPONIBILTE);
     return query.exec();
 }
 
-bool salleaudience::suppression(int id)
+bool SALLE_AUDIENCE::suppression(int ID_SALLE)
 {
 
     int idd;
         QSqlQuery query,query1;
-        QString id_string=QString::number(id);
+        QString id_string=QString::number(ID_SALLE);
 
-        query.prepare(" select ID from SALLEAUDIENCE where ID=:id");
-        query.bindValue(":id", id_string);
+        query.prepare(" select ID_SALLE from SALLE_AUDIENCE where ID_SALLE=:ID_SALLE");
+        query.bindValue(":ID_SALLE", id_string);
         query.exec();
         while(query.next())
       {
 
        idd=query.value(0).toInt();
        }
-        if (idd!=id) {  QMessageBox::critical(nullptr, QObject::tr("supp impossible"),
-       QObject::tr("le ID taper n'existe pas"), QMessageBox::Cancel); }
+        if (idd!=ID_SALLE) {  QMessageBox::critical(nullptr, QObject::tr("supp impossible"),
+       QObject::tr("le ID_SALLE taper n'existe pas"), QMessageBox::Cancel); }
         else {
-            query1.prepare("Delete from SALLEAUDIENCE where ID= :id");
-            query1.bindValue(":id", id);
+            query1.prepare("Delete from SALLE_AUDIENCE where ID_SALLE= :ID_SALLE");
+            query1.bindValue(":ID_SALLE", ID_SALLE);
             QMessageBox::information(nullptr, QObject::tr("suppression reussit"),
                QObject::tr("suppression reussit"), QMessageBox::Cancel);
 
@@ -77,41 +77,41 @@ bool salleaudience::suppression(int id)
         return  query1.exec();
 }
 
-QSqlQueryModel * salleaudience::affichage()
+QSqlQueryModel * SALLE_AUDIENCE::affichage()
 {
 
     QSqlQueryModel * model=new QSqlQueryModel();
-    model->setQuery("select * from SALLEAUDIENCE");
-    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID"));
-    model->setHeaderData(1,Qt::Horizontal,QObject::tr("nbplace"));
-    model->setHeaderData(2,Qt::Horizontal,QObject::tr("camenmarche"));
-    model->setHeaderData(3,Qt::Horizontal,QObject::tr("dispo"));
+    model->setQuery("select * from SALLE_AUDIENCE");
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID_SALLE"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("NOMBRE_PLACES_TOTAL"));
+    model->setHeaderData(2,Qt::Horizontal,QObject::tr("NOMBRES_CAMER_ACTIVEES"));
+    model->setHeaderData(3,Qt::Horizontal,QObject::tr("DISPONIBILTE"));
 
 
     return model;
 }
-    bool salleaudience::modification()
+    bool SALLE_AUDIENCE::modification()
     {
         int idd;
             QSqlQuery query,query1;
-            QString id_string=QString::number(id);
+            QString id_string=QString::number(ID_SALLE);
 
-            query.prepare(" select ID from SALLEAUDIENCE where ID=:id");
-            query.bindValue(":id", id_string);
+            query.prepare(" select ID_SALLE from SALLE_AUDIENCE where ID_SALLE=:ID_SALLE");
+            query.bindValue(":ID_SALLE", id_string);
             query.exec();
             while(query.next())
           {
 
            idd=query.value(0).toInt();
            }
-        if (idd!=id) {  QMessageBox::critical(nullptr, QObject::tr("modification impossible"),
+        if (idd!=ID_SALLE) {  QMessageBox::critical(nullptr, QObject::tr("modification impossible"),
        QObject::tr("ID n'existe pas"), QMessageBox::Cancel); }
         else {
-    query1.prepare("update SALLEAUDIENCE set ID= :id , NBPLACE=:nbplace , CAMENMARCHE=:camenmarche , DISPO=:dispo where ID = :id ");
-    query1.bindValue(":id",id);
-    query1.bindValue(":nbplace",nbplace);
-    query1.bindValue(":camenmarche",camenmarche);
-    query1.bindValue(":dispo",dispo);
+    query1.prepare("update SALLE_AUDIENCE set ID_SALLE= :ID_SALLE , NOMBRE_PLACES_TOTAL=:NOMBRE_PLACES_TOTAL , NOMBRES_CAMER_ACTIVEES=:NOMBRES_CAMER_ACTIVEES , DISPONIBILTE=:DISPONIBILTE where ID_SALLE = :ID_SALLE ");
+    query1.bindValue(":ID_SALLE",ID_SALLE);
+    query1.bindValue(":NOMBRE_PLACES_TOTAL",NOMBRE_PLACES_TOTAL);
+    query1.bindValue(":NOMBRES_CAMER_ACTIVEES",NOMBRES_CAMER_ACTIVEES);
+    query1.bindValue(":DISPONIBILTE",DISPONIBILTE);
     QMessageBox::information(nullptr, QObject::tr("modification reussit"),
        QObject::tr("modification reussit"), QMessageBox::Cancel);
 
@@ -119,48 +119,48 @@ QSqlQueryModel * salleaudience::affichage()
          return  query1.exec();
     }
 
-QSqlQueryModel* salleaudience::trie()
+QSqlQueryModel* SALLE_AUDIENCE::trie()
     {
         QSqlQueryModel* model = new QSqlQueryModel();
 
-            model->setQuery("select ID,nbplace,camenmarche,dispo from SALLEAUDIENCE ORDER BY ID asc");
+            model->setQuery("select ID_SALLE,NOMBRE_PLACES_TOTAL,NOMBRES_CAMER_ACTIVEES,DISPONIBILTE from SALLE_AUDIENCE ORDER BY ID_SALLE asc");
 
-            model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
-              model->setHeaderData(1, Qt::Horizontal, QObject::tr("nbplace"));
-                   model->setHeaderData(2, Qt::Horizontal, QObject::tr("camenmarche"));
-                        model->setHeaderData(3, Qt::Horizontal, QObject::tr("dispo"));
+            model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID_SALLE"));
+              model->setHeaderData(1, Qt::Horizontal, QObject::tr("NOMBRE_PLACES_TOTAL"));
+                   model->setHeaderData(2, Qt::Horizontal, QObject::tr("NOMBRES_CAMER_ACTIVEES"));
+                        model->setHeaderData(3, Qt::Horizontal, QObject::tr("DISPONIBILTE"));
 
 
         return model;
     }
 
-QSqlQueryModel* salleaudience::trie2()
+QSqlQueryModel* SALLE_AUDIENCE::trie2()
     {
         QSqlQueryModel* model = new QSqlQueryModel();
 
-            model->setQuery("select ID,nbplace,camenmarche,dispo from SALLEAUDIENCE ORDER BY ID desc");
+            model->setQuery("select ID_SALLE,NOMBRE_PLACES_TOTAL,NOMBRES_CAMER_ACTIVEES,DISPONIBILTE from SALLE_AUDIENCE ORDER BY ID_SALLE desc");
 
-            model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
-              model->setHeaderData(1, Qt::Horizontal, QObject::tr("nbplace"));
-                   model->setHeaderData(2, Qt::Horizontal, QObject::tr("camenmarche"));
-                        model->setHeaderData(3, Qt::Horizontal, QObject::tr("dispo"));
+            model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID_SALLE"));
+              model->setHeaderData(1, Qt::Horizontal, QObject::tr("NOMBRE_PLACES_TOTAL"));
+                   model->setHeaderData(2, Qt::Horizontal, QObject::tr("NOMBRES_CAMER_ACTIVEES"));
+                        model->setHeaderData(3, Qt::Horizontal, QObject::tr("DISPONIBILTE"));
 
 
         return model;
     }
 
-QSqlQueryModel *salleaudience::recherche(QString id)
+QSqlQueryModel *SALLE_AUDIENCE::recherche(QString ID_SALLE)
 {
 
     QSqlQueryModel *model= new QSqlQueryModel();
-        model->setQuery("SELECT * FROM salleaudience WHERE ID LIKE'%"+id+"%'");
+        model->setQuery("SELECT * FROM SALLE_AUDIENCE WHERE ID_SALLE LIKE'%"+ID_SALLE+"%'");
         return model;
 }
 
 
-QStringList salleaudience::listedispo(QString var){
+QStringList SALLE_AUDIENCE::listedispo(QString var){
     QSqlQuery query;
-    query.prepare("select DISTINCT("+var+") from SALLEAUDIENCE");
+    query.prepare("select DISTINCT("+var+") from SALLE_AUDIENCE");
     query.exec();
     QStringList list;
     while(query.next())
@@ -170,10 +170,10 @@ QStringList salleaudience::listedispo(QString var){
 
     return list;
 }
-int salleaudience::calcul_dispo(QString adresse,QString val)
+int SALLE_AUDIENCE::calcul_dispo(QString adresse,QString val)
 {
     QSqlQuery query;
-     query.prepare("select  * from SALLEAUDIENCE  WHERE "+val+"=:adresse");
+     query.prepare("select  * from SALLE_AUDIENCE  WHERE "+val+"=:adresse");
      query.bindValue(":adresse", adresse );
      query.exec();
      int total=0;

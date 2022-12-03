@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.11.0, 2022-12-02T11:05:21. -->
+<!-- Written by QtCreator 4.11.0, 2022-12-03T10:58:19. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -58,7 +58,8 @@
    <valuelist type="QVariantList" key="ClangCodeModel.CustomCommandLineKey">
     <value type="QString">-fno-delayed-template-parsing</value>
    </valuelist>
-   <value type="bool" key="ClangCodeModel.UseGlobalConfig">true</value>
+   <value type="bool" key="ClangCodeModel.UseGlobalConfig">false</value>
+   <value type="QString" key="ClangCodeModel.WarningConfigId">{7f8ebfe8-d8e5-4bfd-b91f-3e56e28bde95}</value>
   </valuemap>
  </data>
  <data>
@@ -287,8 +288,9 @@
     </valuelist>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/zizou/OneDrive/Bureau/QT/gestion_des_salles_daudiances/gestion_des_salles_daudiances.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/zizou/OneDrive/Bureau/QT/gestion_des_salles_daudiances/gestion_des_salles_daudiances.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">gestion_des_salles_daudiances2</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/zizou/OneDrive/Bureau/QT(2)/gestion_des_salles_daudiances/gestion_des_salles_daudiances.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/zizou/OneDrive/Bureau/QT(2)/gestion_des_salles_daudiances/gestion_des_salles_daudiances.pro</value>
     <value type="QString" key="RunConfiguration.Arguments"></value>
     <value type="bool" key="RunConfiguration.Arguments.multi">false</value>
     <value type="QString" key="RunConfiguration.OverrideDebuggerStartup"></value>

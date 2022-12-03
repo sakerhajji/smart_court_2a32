@@ -1,4 +1,3 @@
-
 #include"exportexcelobject.h"
 #include "exportexcelobject.h"
 #include <QSqlQuery>

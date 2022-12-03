@@ -54,7 +54,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    salleaudience p;
+    SALLE_AUDIENCE p;
     QByteArray data; // variable contenant les données reçues
 
             Arduino A; // objet temporaire

@@ -47,9 +47,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->lineEdit->setValidator(new QIntValidator(1,999999, this));
     ui->lineEdit_2->setValidator(new QIntValidator(1,999999, this));
     ui->lineEdit_3->setValidator(new QIntValidator(1,999999, this));
-    ui->id->setValidator(new QIntValidator(1,999999, this));
-    ui->nb->setValidator(new QIntValidator(1,999999, this));
-    ui->c->setValidator(new QIntValidator(1,999999, this));
+    ui->ID_SALLE->setValidator(new QIntValidator(1,999999, this));
+    ui->NOMBRE_PLACES_TOTAL->setValidator(new QIntValidator(1,999999, this));
+    ui->NOMBRES_CAMER_ACTIVEES->setValidator(new QIntValidator(1,999999, this));
     ui->lineEdit_5->setValidator(new QIntValidator(1,999999, this));
     QSettings settings(QSettings::IniFormat, QSettings::UserScope,
                            QCoreApplication::organizationName(), QCoreApplication::applicationName());
@@ -79,12 +79,12 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_ajouter_AZ_clicked()
 {
-    int id=ui->lineEdit->text().toInt();
-    int nbplace=ui->lineEdit_2->text().toInt();
-    int camenmarche=ui->lineEdit_3->text().toInt();
-    QString dispo=ui->lineEdit_4->text();
+    int ID_SALLE=ui->lineEdit->text().toInt();
+    int NOMBRE_PLACES_TOTAL=ui->lineEdit_2->text().toInt();
+    int NOMBRES_CAMER_ACTIVEES=ui->lineEdit_3->text().toInt();
+    QString DISPONIBILTE=ui->lineEdit_4->text();
 
-    salleaudience s(id,nbplace,camenmarche,dispo);
+    SALLE_AUDIENCE s(ID_SALLE,NOMBRE_PLACES_TOTAL,NOMBRES_CAMER_ACTIVEES,DISPONIBILTE);
 
     bool test=s.ajout();
     if(test)
@@ -108,8 +108,8 @@ void MainWindow::on_pushButton_ajouter_AZ_clicked()
 
 void MainWindow::on_pushButton_supprimer_AZ_clicked()
 {
-    int id=ui->lineEdit_5->text().toInt();
-       bool test=p.suppression(id);
+    int ID_SALLE=ui->lineEdit_5->text().toInt();
+       bool test=p.suppression(ID_SALLE);
        if(test)
        {
            ui->tableS->setModel(p.affichage());
@@ -128,11 +128,11 @@ void MainWindow::on_pushButton_supprimer_AZ_clicked()
 
 void MainWindow::on_updateBtnAZ_clicked()
 {
-    int id=ui->id->text().toInt();
-    int nbplace=ui->nb->text().toInt();
-    int camenmarche=ui->c->text().toInt();
-    QString dispo=ui->dis->text();
-        salleaudience p(id,nbplace,camenmarche,dispo);
+    int ID_SALLE=ui->ID_SALLE->text().toInt();
+    int NOMBRE_PLACES_TOTAL=ui->nb->text().toInt();
+    int NOMBRES_CAMER_ACTIVEES=ui->c->text().toInt();
+    QString DISPONIBILTE=ui->dis->text();
+        SALLE_AUDIENCE p(ID_SALLE,NOMBRE_PLACES_TOTAL,NOMBRES_CAMER_ACTIVEES,DISPONIBILTE);
 
         bool test=p.modification();
         if(test)
@@ -232,13 +232,13 @@ void MainWindow::on_statbtnAZ_clicked()
     QPieSeries *series = new QPieSeries();
 
 
-        QStringList list=p.listedispo("dispo");
+        QStringList list=p.listedispo("DISPONIBILTE");
 
 
 
         for (int i =0; i< list.size();i++)
         {
-            series->append(list[i],p.calcul_dispo(list[i],"dispo"));
+            series->append(list[i],p.calcul_dispo(list[i],"DISPONIBILTE"));
 
         }
         QPieSlice *slice = series->slices().at(1);
@@ -267,10 +267,10 @@ void MainWindow::on_excelAZ_clicked()
     ExportExcelObject obj(fileName, "mydata", ui->tableS);
 
     //colums to export
-    obj.addField(0, "ID", "int");
-    obj.addField(1, "nbplace", "int");
-    obj.addField(2, "camenmarche", "int");
-    obj.addField(3, "dispo", "char(20)");
+    obj.addField(0, "ID_SALLE", "int");
+    obj.addField(1, "NOMBRE_PLACES_TOTAL", "int");
+    obj.addField(2, "NOMBRES_CAMER_ACTIVEES", "int");
+    obj.addField(3, "DISPONIBILTE", "char(20)");
 
     int retVal = obj.export2Excel();
     if( retVal > 0)
@@ -290,7 +290,7 @@ void MainWindow::on_btnVersArduinoAZ_clicked()
 
 void MainWindow::on_btnVerifAZ_clicked()
 {
-    QString ID=ui->lineEdit_6->text();
+    QString ID_SALLE=ui->lineEdit_6->text();
         QSqlQuery query;
         QByteArray message;
         QString ch;
@@ -299,8 +299,8 @@ void MainWindow::on_btnVerifAZ_clicked()
             QSqlQuery query1;
 
 
-            query1.prepare("select ID from SALLEAUDIENCE where ID=:id");
-            query1.bindValue(":id", ID);
+            query1.prepare("select ID_SALLE from SALLE_AUDIENCE where ID_SALLE=:ID_SALLE");
+            query1.bindValue(":ID_SALLE", ID_SALLE);
             query1.exec();
             while(query1.next())
           {
@@ -311,7 +311,7 @@ void MainWindow::on_btnVerifAZ_clicked()
         if(idd==id2)
        {      QMessageBox::information(nullptr, QObject::tr("vérification en cours"),
                                        QObject::tr("vérification réussite"), QMessageBox::Cancel);
-                query.prepare("select DISPO from SALLEAUDIENCE where ID = "+ID+"");
+                query.prepare("select DISPONIBILTE from SALLE_AUDIENCE where ID_SALLE = "+ID_SALLE+"");
         if (query.exec())
 
                             {
