@@ -7,7 +7,6 @@
 #include <QStandardItemModel>
 #include <QDialog>
 #include <QFileDialog>
-#include <QDialog>
 #include <QDesktopWidget>
 #include <QSettings>
 #include <QTextStream>
@@ -24,11 +23,30 @@
 #include <QtCharts/QCategoryAxis>
 #include <QtCharts/QPieSeries>
 #include <QtCharts/QPieSlice>
+#include <QFileDialog>
+#include <QMediaPlayer>
+#include <QVideoWidget>
+#include <bits/stdc++.h>
+#include<QMessageBox>
+#include<QIntValidator>
+#include <QPainter>
+#include<QSqlQuery>
+#include<QSqlQueryModel>
+#include<QTableWidget>
+#include<QSystemTrayIcon>
+
+
+
+
+
+
+
 #include"affaire_juridique.h"
 #include "smtp.h"
 #include "arduino.h"
 #include "avocat.h"
 #include "conge.h"
+#include "juge.h"
 QT_CHARTS_USE_NAMESPACE
 
 QT_BEGIN_NAMESPACE
@@ -75,9 +93,25 @@ private slots:
     void on_btn_evaluer_clicked();
     void on_btn_executer_clicked();
     void on_ajouter_conge_clicked();
+    /**************************************/
+    void on_yas_ajouter_clicked();
+    void on_yas_supprimer_clicked();
+    void on_yas_modifer_clicked();
+    void on_yas_tri1_clicked();
+    void on_yas_tri2_clicked();
+    void on_chercher_yas_textChanged(const QString &arg1);
+    void on_yas_chercher_clicked();
+    void on_yas_browse_clicked();
+    void on_yas_send_clicked();
+    void on_yas_pdf_clicked();
+    void on_calendarWidget_clicked(const QDate &date);
+    void on_yas_done_clicked();
+    void on_yas_verifier_clicked();
+    /************************************/
 
 
 private:
+
     Ui::MainWindow *ui;
     affaire_juridique Aff ;
     QStringList files;
@@ -88,6 +122,10 @@ private:
     Avocat A ;
     conge c ;
     QByteArray dataaAV;
+    Juge j;
+    QSystemTrayIcon *msystemtryicon;
+
+
 
 
 };

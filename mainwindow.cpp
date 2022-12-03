@@ -1,11 +1,12 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
+int a=1;
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    /**************************************saker**********************************************************************/
     int ret=Ar.connect_arduino(); // lancer la connexion à arduino
     switch(ret){
     case(0):qDebug()<< "arduino is available and connected to : "<< Ar.getarduino_port_name();
@@ -46,6 +47,12 @@ MainWindow::MainWindow(QWidget *parent)
        }
         QObject::connect(aav.getserial(),SIGNAL(readyRead()),this,SLOT(update_label())); // permet de lancer
     /********************************************************eya****************************************************/
+        ui->le_num->setValidator( new QIntValidator(1, 999, this));
+        ui->tab_juge->setModel(j.afficher(a));
+        ui->tab_juge1->setModel(j.afficher(a));
+        ui->tab_juge2->setModel(j.afficher(a));
+        ui->tab_juge3->setModel(j.afficher(a));
+        ui->le_num_2->setValidator( new QIntValidator(1, 999, this));
 
 }
 
@@ -71,8 +78,10 @@ void MainWindow::on_login_clicked()
             qDebug() << role ;
             if (role == "AJ")
             ui->stackedWidget->setCurrentIndex(1);
-            else if (role=="AV")
+            else if (role=="GV")
                 ui->stackedWidget->setCurrentIndex(2);
+            else if (role=="GG")
+                ui->stackedWidget->setCurrentIndex(3);
 
 
            }
@@ -159,6 +168,26 @@ void MainWindow::update_label()
 
     else if (dataaAV =="s")
         ui->label_access->setText("L'avocat a dépassé les tentatives d'essais autorisées !  ");
+    /*************************************************yesmine*****************************************************/
+    QString message , numcas=ui->chercher_2->text();
+      reverse(numcas.begin(), numcas.end());
+      QSqlQuery query;
+            if (query.exec("SELECT REVERSE(PRENOM),REVERSE(NOM) FROM AFFAIRE_JURIDIQUE WHERE numcas= '"+numcas+"\'"))
+                   message="Nom : " +query.value(1).toString()+" prenom : " +query.value(0).toString();
+                     string s = message.toStdString();
+                     const char* p = s.c_str();
+      if(data=="z")
+
+        {ui->affiche->setText("debut de stresse ");
+     msystemtryicon->showMessage(tr(p),tr("debut de stresse  "));}
+
+      else if (data=="x")
+
+      {ui->affiche->setText("detection en cours ");
+       msystemtryicon->showMessage(tr(p),tr("entrain de mantir "));}
+      else   if(data=="y")
+          msystemtryicon->showMessage(tr(p),tr("debut de detection  "));
+     /*************************************************yesmine*****************************************************/
 }
 
 void MainWindow::on_Ajouter_clicked()//add
@@ -845,7 +874,6 @@ void MainWindow::on_ajouter_conge_clicked()
                                  QObject::tr("Congé Attribué avec succes \n"
                                              "Click Cancel to exit ."),QMessageBox::Cancel );
 
-
     }
 
     else
@@ -854,14 +882,266 @@ void MainWindow::on_ajouter_conge_clicked()
                               QObject::tr("Impossible d'attribuer un Congé  .\n "
                                           "Click Cancel to exit. "), QMessageBox::Cancel );
 
-
-
     }
 
 
+}
+/*****************************************************yasmine***************************************************************************/
+void MainWindow::on_yas_ajouter_clicked()
+{
+    QString cin=ui->le_cin->text();
+    QString nom=ui->le_nom->text();
+    QString prenom=ui->le_prenom->text();
+    int num=ui->le_num->text().toInt();
+    int nb=ui->le_nb->text().toInt();
+
+    Juge j(cin,nom,prenom,num,nb);
+    bool test=j.ajouter();
+    QMessageBox msgbox;
+    if(test)
+    {
+        msgbox.setText("echec d'ajout");
+        ui->tab_juge1->setModel((j.afficher(a)));
+        ui->tab_juge->setModel((j.afficher(a)));
+        ui->tab_juge2->setModel((j.afficher(a)));
+        ui->tab_juge3->setModel((j.afficher(a)));
+    }
+    else
+    {
+        msgbox.setText("ajout avec succe");
+        msgbox.exec();
+    }
+
+}
+
+void MainWindow::on_yas_supprimer_clicked()
+{
+    QString c=ui->le_cin_supp->text();
+    bool test=j.supprimer(c);
+    QMessageBox msgbox;
+    if(test)
+    {
+        msgbox.setText("supprimer avec succe");
+        ui->tab_juge3->setModel((j.afficher(a)));
+        ui->tab_juge2->setModel((j.afficher(a)));
+        ui->tab_juge1->setModel((j.afficher(a)));
+        ui->tab_juge->setModel((j.afficher(a)));
+    }
+
+    else
+        msgbox.setText("echec de suppression");
+    msgbox.exec();
+}
+
+
+
+
+void MainWindow::on_yas_modifer_clicked()
+{
+    QString cin=ui->le_cin_2->text();
+    QString nom=ui->le_nom_2->text();
+    QString prenom=ui->le_prenom_2->text();
+    int num=ui->le_num_2->text().toInt();
+    int nb=ui->le_nb2->text().toInt();
+
+    Juge m(cin,nom,prenom,num,nb);
+    QMessageBox msgbox;
+    if(m.chercher(cin)==true)
+
+    {
+        bool test=m.modifier();
+
+        if(test==true)
+        {
+            msgbox.setText("modification avec succe");
+            ui->tab_juge2->setModel((m.afficher(a)));
+            ui->tab_juge->setModel((m.afficher(a)));
+            ui->tab_juge1->setModel((m.afficher(a)));
+            ui->tab_juge3->setModel((m.afficher(a)));
+        }
+        else
+            msgbox.setText("echec de modification");
+        msgbox.exec();
+    }
+    else
+        msgbox.setText("juge introuvable");
+    msgbox.exec();
 
 
 }
+
+void MainWindow::on_yas_tri1_clicked()
+{
+    ui->tab_juge->setModel(j.sort_croissant());
+}
+
+
+
+
+
+void MainWindow::on_yas_tri2_clicked()
+{
+    ui->tab_juge->setModel(j.sort_decroissant());
+}
+
+void MainWindow::on_chercher_yas_textChanged(const QString &arg1)
+{
+    ui->tab_juge->setModel(j.chercher2(arg1));
+}
+
+void MainWindow::on_yas_chercher_clicked()
+{
+    QString s = ui->chercher->text() ;
+    ui->tab_juge->setModel(j.chercher2(s));
+}
+
+
+
+
+void MainWindow::on_yas_browse_clicked()
+{
+
+    files.clear();
+
+    QFileDialog dialog(this);
+    dialog.setDirectory(QDir::homePath());
+    dialog.setFileMode(QFileDialog::ExistingFiles);
+
+    if (dialog.exec())
+        files = dialog.selectedFiles();
+
+    QString fileListString;
+    foreach(QString file, files)
+        fileListString.append( "\"" + QFileInfo(file).fileName() + "\" " );
+
+    ui->file->setText( fileListString );
+
+}
+
+void MainWindow::on_yas_send_clicked()
+{
+    Smtp* smtp = new Smtp("grata.yasmine@esprit.tn",ui->mail_pass->text(), "smtp.gmail.com");
+    connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
+
+    if( !files.isEmpty() )
+        smtp->sendMail("grata.yasmine@esprit.tn", ui->yas_rcpt->text(), ui->subject->text(),ui->msg->toPlainText(), files );
+    else
+        smtp->sendMail("grata.yasmine@esprit.tn", ui->yas_rcpt->text(), ui->subject->text(),ui->msg->toPlainText());
+}
+
+
+
+void MainWindow::on_yas_pdf_clicked()
+{
+    QString strStream;
+    QTextStream out(&strStream);
+    const int rowCount = ui->tab_juge->model()->rowCount();
+    const int columnCount =ui->tab_juge->model()->columnCount();
+
+
+    out <<  "<html>\n"
+        "<head>\n"
+        "<meta Content=\"Text/html; charset=Windows-1251\">\n"
+        <<  QString("<title>%1</title>\n").arg("eleve")
+        <<  "</head>\n"
+        "<body bgcolor=#CFC4E1 link=#5000A0>\n"
+        "<h1>Liste des Evenements</h1>"
+
+        "<table border=1 cellspacing=0 cellpadding=2>\n";
+
+    // headers
+    out << "<thead><tr bgcolor=#f0f0f0>";
+    for (int column = 0; column < columnCount; column++)
+        if (!ui->tab_juge->isColumnHidden(column))
+            out << QString("<th>%1</th>").arg(ui->tab_juge->model()->headerData(column, Qt::Horizontal).toString());
+    out << "</tr></thead>\n";
+    // data table
+    for (int row = 0; row < rowCount; row++)
+    {
+        out << "<tr>";
+        for (int column = 0; column < columnCount; column++)
+        {
+            if (!ui->tab_juge->isColumnHidden(column))
+            {
+                QString data = ui->tab_juge->model()->data(ui->tab_juge->model()->index(row, column)).toString().simplified();
+                out << QString("<td bkcolor=0>%1</td>").arg((!data.isEmpty()) ? data : QString("&nbsp;"));
+            }
+        }
+        out << "</tr>\n";
+    }
+    out <<  "</table>\n"
+        "</body>\n"
+        "</html>\n";
+
+
+
+    QTextDocument *document = new QTextDocument();
+    document->setHtml(strStream);
+
+
+    //QTextDocument document;
+    //document.setHtml(html);
+    QPrinter printer(QPrinter::PrinterResolution);
+    printer.setOutputFormat(QPrinter::PdfFormat);
+    printer.setOutputFileName("mypdffile.pdf");
+    document->print(&printer);
+
+}
+
+void MainWindow::on_calendarWidget_clicked(const QDate &date)
+{
+
+    ui->tab_juge_2->setModel(j.affichercalendrier(date));
+
+}
+
+
+
+
+
+void MainWindow::on_yas_done_clicked()
+{
+    QDate q;
+    QMessageBox msgbox;
+    QSqlQuery query;
+    QDate datenow = QDate::currentDate() ;
+    QString date = datenow.toString("dd/MM/yyyy") ;
+    query.prepare("delete from AFFAIRE_JURIDIQUE where DATECAS =\'"+date+"\'");
+
+
+    query.exec();
+    if(query.exec())
+    {
+        msgbox.setText("journee termine");
+        ui->tab_juge_2->setModel(j.affichercalendrier(q));
+    }
+
+    else
+        msgbox.setText("echec de suppression");
+    msgbox.exec();
+}
+
+void MainWindow::on_yas_verifier_clicked()
+{
+    QString message, numcas=ui->chercher_2->text();
+    reverse(numcas.begin(), numcas.end());
+    QSqlQuery query;
+
+    if (query.exec ("SELECT REVERSE(PRENOM),REVERSE(NOM) FROM AFFAIRE_JURIDIQUE WHERE numcas= '"+numcas+"\'") )
+    {
+        if  (query.next())
+        {
+            message="Nom : " +query.value(1).toString()+" prenom : " +query.value(0).toString();
+            string s = message.toStdString();
+            const char* p = s.c_str();
+            msystemtryicon->showMessage(tr("notification"),tr(p));
+        }
+        else msystemtryicon->showMessage(tr("notification"),tr("identifiant introuvable"));
+    }
+}
+
+/*****************************************************yasmine***************************************************************************/
+
 
 
 

@@ -21,6 +21,7 @@ SOURCES += \
     avocat.cpp \
     conge.cpp \
     connection.cpp \
+    juge.cpp \
     main.cpp \
     mainwindow.cpp \
     smtp.cpp
@@ -31,6 +32,7 @@ HEADERS += \
     avocat.h \
     conge.h \
     connection.h \
+    juge.h \
     mainwindow.h \
     smtp.h
 
