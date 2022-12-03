@@ -47,9 +47,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->lineEdit->setValidator(new QIntValidator(1,999999, this));
     ui->lineEdit_2->setValidator(new QIntValidator(1,999999, this));
     ui->lineEdit_3->setValidator(new QIntValidator(1,999999, this));
-    ui->ID_SALLE->setValidator(new QIntValidator(1,999999, this));
-    ui->NOMBRE_PLACES_TOTAL->setValidator(new QIntValidator(1,999999, this));
-    ui->NOMBRES_CAMER_ACTIVEES->setValidator(new QIntValidator(1,999999, this));
+    //ui->ID_SALLE->setValidator(new QIntValidator(1,999999, this));
+   // ui->NOMBRE_PLACES_TOTAL->setValidator(new QIntValidator(1,999999, this));
+   // ui->NOMBRES_CAMER_ACTIVEES->setValidator(new QIntValidator(1,999999, this));
     ui->lineEdit_5->setValidator(new QIntValidator(1,999999, this));
     QSettings settings(QSettings::IniFormat, QSettings::UserScope,
                            QCoreApplication::organizationName(), QCoreApplication::applicationName());
@@ -128,7 +128,7 @@ void MainWindow::on_pushButton_supprimer_AZ_clicked()
 
 void MainWindow::on_updateBtnAZ_clicked()
 {
-    int ID_SALLE=ui->ID_SALLE->text().toInt();
+    int ID_SALLE=ui->id->text().toInt();
     int NOMBRE_PLACES_TOTAL=ui->nb->text().toInt();
     int NOMBRES_CAMER_ACTIVEES=ui->c->text().toInt();
     QString DISPONIBILTE=ui->dis->text();

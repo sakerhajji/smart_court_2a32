@@ -6,7 +6,7 @@
 #include <QSqlDatabase>
 #include <QSqlError>
 
-class salleaudience
+class SALLE_AUDIENCE
 {
 private:
     int ID_SALLE;
