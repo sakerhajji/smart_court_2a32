@@ -35,6 +35,44 @@
 #include<QTableWidget>
 #include<QSystemTrayIcon>
 
+#include "salleaudience.h"
+#include "connection.h"
+#include<QMessageBox>
+#include <QDebug>
+#include <QSqlDatabase>
+#include <QSqlError>
+#include <QSqlQuery>
+#include <QString>
+#include <QIntValidator>
+#include <QTabWidget>
+#include <QAbstractItemView>
+#include <QtPrintSupport/QPrintDialog>
+#include <QDebug>
+#include<QMessageBox>
+#include <QtSql/QSqlError>
+#include<QIntValidator>
+#include <QCloseEvent>
+#include <QPushButton>
+#include <QLineEdit>
+#include <QFileDialog>
+#include <QTextStream>
+#include <QTextDocument>
+#include<QSystemTrayIcon>
+#include<QPrinter>
+#include <QtCharts/QPieSeries>
+#include <QtCharts/QBarSeries>
+#include <QtCharts/QBarSet>
+#include <QtCharts/QLegend>
+#include <QtCharts/QBarCategoryAxis>
+#include <QtCharts/QHorizontalStackedBarSeries>
+#include <QtCharts/QCategoryAxis>
+#include <QtCharts/QPieSlice>
+#include <QtCharts/QChartView>
+#include <QtCharts/QLineSeries>
+#include <QtCharts/QtCharts>
+#include <QSqlQuery>
+#include <exportexcelobject.h>
+
 
 
 
@@ -47,6 +85,7 @@
 #include "avocat.h"
 #include "conge.h"
 #include "juge.h"
+#include "salleaudience.h"
 QT_CHARTS_USE_NAMESPACE
 
 QT_BEGIN_NAMESPACE
@@ -107,7 +146,19 @@ private slots:
     void on_calendarWidget_clicked(const QDate &date);
     void on_yas_done_clicked();
     void on_yas_verifier_clicked();
-    /************************************/
+    /******************aziz******************/
+    void on_pushButton_ajouter_AZ_clicked();
+    void on_pushButton_supprimer_AZ_clicked();
+    void on_updateBtnAZ_clicked();
+    void on_pdfbuttonAZ_clicked();
+    void on_tributtonAZ_clicked();
+    void on_trier2AZ_clicked();
+    void on_statbtnAZ_clicked();
+    void on_excelAZ_clicked();
+    void on_btnVersArduinoAZ_clicked();
+    void on_btnVerifAZ_clicked();
+    void on_TrouverAZIZ_textChanged(const QString &arg1);
+     /******************aziz******************/
 
 
 private:
@@ -120,6 +171,7 @@ private:
     Arduino Ar;
     Arduino aav ;
     Avocat A ;
+    SALLE_AUDIENCE p;
     conge c ;
     QByteArray dataaAV;
     Juge j;

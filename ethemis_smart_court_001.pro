@@ -21,9 +21,12 @@ SOURCES += \
     avocat.cpp \
     conge.cpp \
     connection.cpp \
+    digitalclock.cpp \
+    exportexcelobject.cpp \
     juge.cpp \
     main.cpp \
     mainwindow.cpp \
+    salleaudience.cpp \
     smtp.cpp
 
 HEADERS += \
@@ -32,9 +35,13 @@ HEADERS += \
     avocat.h \
     conge.h \
     connection.h \
+    digitalclock.h \
+    exportexcelobject.h \
     juge.h \
     mainwindow.h \
-    smtp.h
+    salleaudience.h \
+    smtp.h \
+    webaxwidget.h
 
 FORMS += \
     mainwindow.ui

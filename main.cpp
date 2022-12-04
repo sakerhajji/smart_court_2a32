@@ -2,6 +2,7 @@
 #include <QApplication>
 #include <QMessageBox>
 #include "connection.h"
+#include "digitalclock.h"
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -22,6 +23,8 @@ int main(int argc, char *argv[])
                                 "Click Cancel to exit."), QMessageBox::Cancel);
 
 
+    DigitalClock clock;
+    clock.show();
 
     return a.exec();
 }
