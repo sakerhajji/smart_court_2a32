@@ -1,5 +1,25 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include"personnels.h"
+#include<QMessageBox>
+#include<QIntValidator>
+#include <QtPrintSupport/QPrintDialog>
+#include <QDebug>
+#include<QMessageBox>
+#include <QtSql/QSqlError>
+#include<QIntValidator>
+#include <QCloseEvent>
+#include <QPushButton>
+#include <QLineEdit>
+#include <QFileDialog>
+#include <QTextStream>
+#include <QTextDocument>
+#include<QSystemTrayIcon>
+#include<QPrinter>
+#include <QSqlRecord>
+#include "QrCode.hpp"
+#include"arduino.h"
+using namespace qrcodegen;
 int a=1;
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -65,6 +85,23 @@ MainWindow::MainWindow(QWidget *parent)
                ui->Map->dynamicCall("Navigate(const QString&)", "https://www.google.com/maps/place/ESPRIT/@36.9016729,10.1713215,15z");
         /********************************************************aziz****************************************************/
 
+
+
+
+
+
+
+
+
+
+
+
+
+               /********************amine**************/
+               ui->id -> setValidator (new QIntValidator(0, 999999, this));
+
+               ui->tablepp_3->setModel(per.afficherp());
+
 }
 
 MainWindow::~MainWindow()
@@ -96,7 +133,9 @@ void MainWindow::on_login_clicked()
                 ui->stackedWidget->setCurrentIndex(3);
             else if (role=="GS")
                 ui->stackedWidget->setCurrentIndex(4);
-
+//amine
+            else if (role=="GP")
+                ui->stackedWidget->setCurrentIndex(0);
 
            }
 
@@ -1424,6 +1463,265 @@ void MainWindow::on_TrouverAZIZ_textChanged(const QString &arg1)
     ui->tableS->setModel(p.recherche(arg1));
 }
 /*****************************************************aziz***************************************************************************/
+
+
+
+
+
+/*********************amine*************/
+
+void MainWindow::on_ajouter_2_clicked()
+{
+    //recuperation des information saisis dans les 5 champs
+   int id=ui->id_3->text().toInt();
+   QString nom=ui->nom_3->text();
+   QString prenom=ui->prenom_3->text();
+   int age=ui->age_3->text().toInt();
+   QString adresse=ui->adresse_3->text();
+
+
+   personnels p(id,nom,prenom,age,adresse);
+   bool test=p.ajouterp();
+   if(test)
+   { QMessageBox::information(nullptr, QObject::tr("ok"),
+                           QObject::tr("ajout effectué.\n"
+                                       "Click Cancel to exit."), QMessageBox::Cancel);
+ui->tablepp_3->setModel(p.afficherp());
+   }
+
+   else//si requete non executé
+               QMessageBox::critical(nullptr, QObject::tr("not ok"),
+                           QObject::tr("ajout non effectuée\n"
+                                       "Click Cancel to exit."), QMessageBox::Cancel);
+}
+
+void MainWindow::on_supprimer_3_clicked()
+{
+    personnels p1; p1.setid(ui->id_supp_3->text().toInt());
+    bool test=p1.supprimerp(p1.getid());
+    QMessageBox msgBox;
+    if(test)
+    {msgBox.setText("supprimer avec succes");
+        ui->tablepp_3->setModel(per.afficherp());
+    }
+                else
+        msgBox.setText("echec de supprimer");
+    msgBox.exec();
+
+}
+
+void MainWindow::on_update_3_clicked()
+{
+    int id=ui->id2_3->text().toInt();
+    QString nom=ui->nom2_3->text();
+    QString prenom=ui->prenom2_3->text();
+    int age=ui->age2_3->text().toInt();
+    QString adresse=ui->adresse2_3->text();
+
+    personnels p(id,nom,prenom,age,adresse);
+    bool test=p.modifierp();
+        if(test)
+        {
+            //actualiser pour l'affichage
+            ui->tablepp_3->setModel(p.afficherp());
+                    QMessageBox::information(nullptr, QObject::tr("database is open"),
+                                QObject::tr("modification effectué.\n"
+                                            "Click Cancel to exit."), QMessageBox::Cancel);}
+        else
+            QMessageBox::critical(nullptr, QObject::tr("database is open"),
+                        QObject::tr("modification non effectué.\n"
+                                    "Click Cancel to exit."), QMessageBox::Cancel);
+}
+
+void MainWindow::on_pushButton_9_clicked()
+{
+    int id= ui->lineEdit_archive_2->text().toInt();
+    per.archiverp(id);
+    ui->tablepp_3->setModel(per.afficherp());
+
+}
+
+void MainWindow::on_pushButton_10_clicked()
+{
+     ui->tablepp_3->setModel(per.afficher_historiquep());
+}
+
+void MainWindow::on_pushButton_11_clicked()
+{
+    ui->tablepp_3->setModel(per.afficherp());
+
+}
+
+void MainWindow::on_pushButton_12_clicked()
+{
+    ui->tablepp_3->setModel(per.affichertriAZp());
+
+}
+
+void MainWindow::on_pushButton_13_clicked()
+{
+    ui->tablepp_3->setModel(per.affichertriZAp());
+
+}
+
+//void MainWindow::on_lineEdit_cursorPositionChanged(int arg1, int arg2)
+
+
+void MainWindow::on_rechercher_button_2_clicked()
+{
+    QString rech =ui->idrech_2->text();
+        ui->tablepp_3->setModel(per.rechercherp(rech));
+}
+
+
+
+void MainWindow::on_pushButton_14_clicked()
+{
+    QString strStream;
+                                        QTextStream out(&strStream);
+
+                                        const int rowCount = ui->tablepp_3->model()->rowCount();
+                                        const int columnCount = ui->tablepp_3->model()->columnCount();
+
+                                        out <<  "<html>\n"
+                                            "<head>\n"
+                                            "<meta Content=\"Text/html; charset=Windows-1251\">\n"
+                                            <<  QString("<title>%1</title>\n").arg("strTitle")
+                                            <<  "</head>\n"
+                                            "<body bgcolor=#ffffff link=#5000A0>\n"
+
+                                           //     "<align='right'> " << datefich << "</align>"
+                                            "<center> <H1>listes des personnels </H1></br></br><table border=1 cellspacing=0 cellpadding=2>\n";
+
+                                        // headers
+                                        out << "<thead><tr bgcolor=#f0f0f0> <th>Numero</th>";
+                                        for (int column = 0; column < columnCount; column++)
+                                            if (!ui->tablepp_3->isColumnHidden(column))
+                                                out << QString("<th>%1</th>").arg(ui->tablepp_3->model()->headerData(column, Qt::Horizontal).toString());
+                                        out << "</tr></thead>\n";
+
+                                        // data table
+                                        for (int row = 0; row < rowCount; row++) {
+                                            out << "<tr> <td bkcolor=0>" << row+1 <<"</td>";
+                                            for (int column = 0; column < columnCount; column++) {
+                                                if (!ui->tablepp_3->isColumnHidden(column)) {
+                                                    QString data = ui->tablepp_3->model()->data(ui->tablepp_3->model()->index(row, column)).toString().simplified();
+                                                    out << QString("<td bkcolor=0>%1</td>").arg((!data.isEmpty()) ? data : QString("&nbsp;"));
+                                                }
+                                            }
+                                            out << "</tr>\n";
+                                        }
+                                        out <<  "</table> </center>\n"
+                                            "</body>\n"
+                                            "</html>\n";
+
+                                  QString fileName = QFileDialog::getSaveFileName((QWidget* )0, "Sauvegarder en PDF", QString(), "*.pdf");
+                                    if (QFileInfo(fileName).suffix().isEmpty()) { fileName.append(".pdf"); }
+
+                                   QPrinter printer (QPrinter::PrinterResolution);
+                                    printer.setOutputFormat(QPrinter::PdfFormat);
+                                   printer.setPaperSize(QPrinter::A4);
+                                  printer.setOutputFileName(fileName);
+
+                                   QTextDocument doc;
+                                    doc.setHtml(strStream);
+                                    doc.setPageSize(printer.pageRect().size()); // This is necessary if you want to hide the page number
+                                    doc.print(&printer);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+void MainWindow::on_qrcodegen_2_clicked()
+{
+    int tabeq=ui->tablepp_3->currentIndex().row();
+           QVariant idd=ui->tablepp_3->model()->data(ui->tablepp_3->model()->index(tabeq,0));
+           QString id= idd.toString();
+           QSqlQuery qry;
+           qry.prepare("select * from PERSONNELS where ID=:id");
+           qry.bindValue(":ID",id);
+           qry.exec();
+              QString nom,prenom,adresse,ide;
+
+           while(qry.next()){
+
+               id=qry.value(1).toString();
+               nom=qry.value(2).toString();
+               prenom=qry.value(3).toString();
+               adresse=qry.value(4).toString();
+
+
+           }
+           ide=QString(id);
+                  ide="ID:"+id+"NOM:"+nom+"PRENOM:"+prenom,"ADRESSE:"+adresse;
+           QrCode qr = QrCode::encodeText(ide.toUtf8().constData(), QrCode::Ecc::HIGH);
+
+           // Read the black & white pixels
+           QImage im(qr.getSize(),qr.getSize(), QImage::Format_RGB888);
+           for (int y = 0; y < qr.getSize(); y++) {
+               for (int x = 0; x < qr.getSize(); x++) {
+                   int color = qr.getModule(x, y);  // 0 for white, 1 for black
+
+                   // You need to modify this part
+                   if(color==0)
+                       im.setPixel(x, y,qRgb(254, 254, 254));
+                   else
+                       im.setPixel(x, y,qRgb(0, 0, 0));
+               }
+           }
+           im=im.scaled(200,200);
+           ui->qrcodecommande_2->setPixmap(QPixmap::fromImage(im));
+
+}
+
+void MainWindow::on_stastmed_clicked()
+{
+
+    QPieSeries *series11 = new QPieSeries();
+
+
+     QStringList list11=per.listeadressesp("age");
+
+
+     for (int i =0; i< list11.size();i++)
+     {
+         series11->append(list11[i],per.calcul_adressesp(list11[i],"age"));
+
+
+
+     }
+
+     QPieSlice *slice11 = series11->slices().at(1);
+     slice11->setLabelVisible();
+     slice11->setExploded();
+     QPieSlice *slice1 = series11->slices().at(2);
+     slice1->setLabelVisible();
+     slice1->setExploded();
+
+     QtCharts::QChart *chart11 =new QtCharts::QChart();
+     chart11->addSeries(series11);
+     chart11->setTitle("Statistiques");
+     chart11->setAnimationOptions(QChart::AllAnimations);
+     QChartView *chartview11=new QChartView(chart11);
+     QGridLayout *mainLayout11=new QGridLayout();
+     mainLayout11->addWidget(chartview11,0,0);
+     ui->label_73->setLayout(mainLayout11);
+}
+
+
+
+
 
 
 

@@ -86,6 +86,27 @@
 #include "conge.h"
 #include "juge.h"
 #include "salleaudience.h"
+
+
+
+
+/**********Amine**********/
+#include "personnels.h"
+#include"arduinop.h"
+#include <QMainWindow>
+#include <QtPrintSupport/QPrintDialog>
+#include <QtCharts/QPieSeries>
+#include <QtCharts/QBarSeries>
+#include <QtCharts/QBarSet>
+#include <QtCharts/QLegend>
+#include <QtCharts/QBarCategoryAxis>
+#include <QtCharts/QHorizontalStackedBarSeries>
+#include <QtCharts/QCategoryAxis>
+#include <QtCharts>
+#include <QtCharts/QPieSlice>
+#include <QtCharts/QChartView>
+#include <QtCharts/QLineSeries>
+
 QT_CHARTS_USE_NAMESPACE
 
 QT_BEGIN_NAMESPACE
@@ -159,7 +180,57 @@ private slots:
     void on_btnVerifAZ_clicked();
     void on_TrouverAZIZ_textChanged(const QString &arg1);
      /******************aziz******************/
+/********************Amine********************/
 
+    void rechEmploy();
+
+    void on_ajouter_3_clicked();
+
+    void on_supprimer_3_clicked();
+
+    void on_update_3_clicked();
+
+    void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_3_clicked();
+
+
+
+    void on_pushButton_4_clicked();
+
+    void on_pushButton_5_clicked();
+
+    void on_lineEdit_cursorPositionChanged(int arg1, int arg2);
+
+    void on_pushButton_6_clicked();
+
+    void on_pushButton_7_clicked();
+void on_rechercher_button_clicked();
+    void on_lineEdit_customContextMenuRequested(const QPoint &pos);
+void on_qrcodegen_clicked();
+void on_statsmed_clicked();
+/********************Amine********************/
+
+void on_ajouter_2_clicked();
+
+void on_pushButton_9_clicked();
+
+void on_rechercher_button_2_clicked();
+
+void on_qrcodegen_2_clicked();
+
+void on_stastmed_clicked();
+
+void on_pushButton_14_clicked();
+
+void on_pushButton_11_clicked();
+
+void on_pushButton_12_clicked();
+void on_pushButton_13_clicked();
+
+void on_pushButton_10_clicked();
 
 private:
 
@@ -178,7 +249,12 @@ private:
     QSystemTrayIcon *msystemtryicon;
 
 
+//amine
+    personnels per;
 
+    QByteArray dataP; // variable contenant les données reçues
+
+       //ArduinoP A;
 
 };
 #endif // MAINWINDOW_H

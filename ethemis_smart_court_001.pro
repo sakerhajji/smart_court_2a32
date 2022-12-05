@@ -16,8 +16,10 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    QrCode.cpp \
     affaire_juridique.cpp \
     arduino.cpp \
+    arduinop.cpp \
     avocat.cpp \
     conge.cpp \
     connection.cpp \
@@ -26,12 +28,15 @@ SOURCES += \
     juge.cpp \
     main.cpp \
     mainwindow.cpp \
+    personnels.cpp \
     salleaudience.cpp \
     smtp.cpp
 
 HEADERS += \
+    QrCode.hpp \
     affaire_juridique.h \
     arduino.h \
+    arduinop.h \
     avocat.h \
     conge.h \
     connection.h \
@@ -39,6 +44,7 @@ HEADERS += \
     exportexcelobject.h \
     juge.h \
     mainwindow.h \
+    personnels.h \
     salleaudience.h \
     smtp.h \
     webaxwidget.h
